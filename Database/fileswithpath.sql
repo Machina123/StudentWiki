@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS studentup
+CREATE DATABASE IF NOT EXISTS studentup;
 
 CREATE TABLE `studentup`.`fileswithpath` ( 
 	`id` INT NOT NULL AUTO_INCREMENT , 
