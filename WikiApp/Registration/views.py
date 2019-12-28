@@ -6,14 +6,23 @@ from django.utils.encoding import force_bytes, force_text
 from Registration.tokens import account_activation_token
 from django.contrib.auth.decorators import login_required
 from django import forms
-from django.contrib.auth import login
+from django.contrib.auth import login, logout, authenticate
+from django.http import HttpResponseRedirect, HttpResponse
+from django.urls import reverse
 from django.contrib.auth.models import User
 from Registration.forms import UserForm
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 @login_required
 def home(request):
-    return render(request, 'frontend/login.html')
+    return render(request, 'frontend/home.html')
+
+@login_required
+def my_logout(request):
+    logout(request)
+    return render(request, 'frontend/index.html')
 
 def index(request):
     return render(request,'frontend/index.html')
@@ -38,7 +47,8 @@ def register(request):
                     'uid': force_text(urlsafe_base64_encode(force_bytes(user.pk))),
                     'token': account_activation_token.make_token(user),
                 })
-                user.email_user(subject, message, 'mateusz.bugaj@interia.pl')
+                user.email_user(subject, message)
+                send_mail(subject, message, 'mateusz.bugaj@interia.pl', [user.email])
                 return redirect('frontend/account_activation_sent')
             else:
                 raise forms.ValidationError('Zły Email')
@@ -72,7 +82,25 @@ def activate(request, uidb64, token):
         user.userprofile.email_confirmed = True
         user.save()
         login(request, user)
-        return redirect('index')
+        return redirect('frontend/home')
     else:
-        return render(request, 'account_activation_invalid.html')
+        return render(request, 'frontend/account_activation_invalid.html')
+
+def my_login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)
+        if user:
+            if user.is_active:
+                login(request,user)
+                return render(request, 'frontend/index.html')
+            else:
+                return HttpResponse("Your account was inactive.")
+        else:
+            print("Someone tried to login and failed.")
+            print("They used username: {} and password: {}".format(username,password))
+            return HttpResponse("Invalid login details given")
+    else:
+        return render(request, 'frontend/login.html')
 

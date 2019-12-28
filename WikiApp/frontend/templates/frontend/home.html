@@ -14,7 +14,7 @@
 {# Django Home Link / Admin Link / Register Link#}
           <li><a class="navbar-link" href="{% url 'admin:index' %}">Admin</a></li>
           <li><a class="navbar-link" href="{% url 'Registration:register' %}">Register</a></li>
-</ul>
+        </ul>
       </div>
     </nav>
     <div class="container">
@@ -22,15 +22,16 @@
       <!--
       Potrzebuje tej linijki w tym pliku ale nie działa mi dołączanie base.html :/
       -->
-  <p>Please confirm your email address to complete the registration. </p>
+    <h2>Welcome, <small>{{ user.username }}</small>!</h2>
+  <p>Thanks for confirming your email address!</p>
 
     </div>
   </body>
 </html>
 
-
 <!--
 {% block body_block %}
-  <p>Please confirm your email address to complete the registration. </p>
+  <h2>Welcome, <small>{{ user.username }}</small>!</h2>
+  <p>Thanks for confirming your email address!</p>
 {% endblock %}
 -->
