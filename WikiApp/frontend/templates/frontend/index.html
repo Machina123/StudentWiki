@@ -22,7 +22,7 @@
     <h1>Welcome to the Djungle !</h1>
     {% if user.is_authenticated %}
         <h2>Hello {{ user.username }}</h2>
-
+      <p><a href="{% url 'UsersActions:change_password' %}">Change Password</a></p>
       <p><a href="{% url 'UsersActions:my_logout' %}">logout</a></p>
     {% else %}
         <h2>Register or Login if you'd like to</h2>

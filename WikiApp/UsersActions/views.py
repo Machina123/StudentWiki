@@ -18,16 +18,20 @@ from django.conf import settings
 def home(request):
     return render(request, 'frontend/home.html')
 
+
 @login_required
 def my_logout(request):
     logout(request)
     return render(request, 'frontend/index.html')
 
-# def index(request):
-#    return render(request,'frontend/index.html')
+
+def index(request):
+    return render(request, 'frontend/index.html')
+
 
 def account_activation_sent(request):
     return render(request, 'frontend/account_activation_sent.html')
+
 
 def register(request):
     if request.method == 'POST':
@@ -55,7 +59,7 @@ def register(request):
             print(user_form.errors)
     else:
         user_form = UserForm()
-    return render(request,'frontend/registration.html',
+    return render(request, 'frontend/registration.html',
                           {'user_form': user_form})
 
 
@@ -68,6 +72,7 @@ def CheckEmail(email):
 
 def account_activation_sent(request):
     return render(request, 'frontend/account_activation_sent.html')
+
 
 def activate(request, uidb64, token):
     try:
@@ -84,6 +89,7 @@ def activate(request, uidb64, token):
         return render(request, 'frontend/account_activation_valid.html')
     else:
         return render(request, 'frontend/account_activation_invalid.html')
+
 
 def my_login(request):
     if request.method == 'POST':
