@@ -3,14 +3,13 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes, force_text
-from Registration.tokens import account_activation_token
+from UsersActions.tokens import account_activation_token
 from django.contrib.auth.decorators import login_required
 from django import forms
 from django.contrib.auth import login, logout, authenticate
-from django.http import HttpResponseRedirect, HttpResponse
-from django.urls import reverse
+from django.http import HttpResponse
 from django.contrib.auth.models import User
-from Registration.forms import UserForm
+from UsersActions.forms import UserForm
 from django.core.mail import send_mail
 from django.conf import settings
 
@@ -24,8 +23,8 @@ def my_logout(request):
     logout(request)
     return render(request, 'frontend/index.html')
 
-def index(request):
-    return render(request,'frontend/index.html')
+# def index(request):
+#    return render(request,'frontend/index.html')
 
 def account_activation_sent(request):
     return render(request, 'frontend/account_activation_sent.html')
