@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}StudentWiki | Podgląd pliku {% endblock %}
+
+{% block main_css %}
+{{ block.super }}
+{% endblock %}
+
+{% block sub_css %}
+{% endblock %}
+
+{% block main_head_js %}
+
+{% endblock %}
+
+{% block sub_head_js %}
+{% endblock %}
+
+{% block body_block %}
+    <h1>{{ object.title }}</h1>
+    <p><strong>Description</strong>: {{ object.description|default:"(not provided)" }}</p>
+    <p>
+        <a href="{{ object.file.url }}" class="btn btn-success">
+            <span class="glyphicon glyphicon-floppy-save"></span> Download
+        </a>
+    </p>
+{% endblock %}
+
+{% block main_foot_js %}
+{{ block.super }}
+{% endblock %}
+
+{% block sub_foot_js %}
+{% endblock %}

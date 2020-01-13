@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from WikiApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('frontend.urls')),
-    path('UsersActions/', include('UsersActions.urls')),
-    path('', include('django.contrib.auth.urls'))
+    path('user/', include('UsersActions.urls')),
+    path('files/', include('Files.urls')),
+    path('', include('django.contrib.auth.urls')),
+    path('', views.homepage, name="homepage")
 ]

@@ -16,21 +16,20 @@ from django.conf import settings
 
 @login_required
 def home(request):
-    return render(request, 'frontend/home.html')
-
+    return render(request, 'index.html')
 
 @login_required
 def my_logout(request):
     logout(request)
-    return render(request, 'frontend/index.html')
+    return render(request, 'users/login.html')
 
 
 def index(request):
-    return render(request, 'frontend/index.html')
+    return render(request, 'index.html')
 
 
 def account_activation_sent(request):
-    return render(request, 'frontend/account_activation_sent.html')
+    return render(request, 'users/account_activation_sent.html')
 
 
 def register(request):
@@ -44,7 +43,7 @@ def register(request):
                 user.save()
                 current_site = get_current_site(request)
                 subject = 'Activate Your StudentWiki Account'
-                message = render_to_string('frontend/account_activation_email.html', {
+                message = render_to_string('users/account_activation_email.html', {
                     'user': user,
                     'domain': current_site.domain,
                     'uid': force_text(urlsafe_base64_encode(force_bytes(user.pk))),
@@ -52,14 +51,14 @@ def register(request):
                 })
                 user.email_user(subject, message)
                 send_mail(subject, message, 'mateusz.bugaj@interia.pl', [user.email])
-                return redirect('frontend/account_activation_sent')
+                return redirect('users/account_activation_sent')
             else:
                 raise forms.ValidationError('Zły Email')
         else:
             print(user_form.errors)
     else:
         user_form = UserForm()
-    return render(request, 'frontend/registration.html',
+    return render(request, 'users/login.html',
                           {'user_form': user_form})
 
 
@@ -71,7 +70,7 @@ def CheckEmail(email):
 
 
 def account_activation_sent(request):
-    return render(request, 'frontend/account_activation_sent.html')
+    return render(request, 'users/account_activation_sent.html')
 
 
 def activate(request, uidb64, token):
@@ -86,9 +85,9 @@ def activate(request, uidb64, token):
         user.userprofile.email_confirmed = True
         user.save()
         login(request, user)
-        return render(request, 'frontend/account_activation_valid.html')
+        return render(request, 'users/account_activation_valid.html')
     else:
-        return render(request, 'frontend/account_activation_invalid.html')
+        return render(request, 'users/account_activation_invalid.html')
 
 
 def my_login(request):
@@ -99,7 +98,7 @@ def my_login(request):
         if user:
             if user.is_active:
                 login(request,user)
-                return render(request, 'frontend/index.html')
+                return render(request, 'index.html')
             else:
                 return HttpResponse("Your account was inactive.")
         else:
@@ -107,5 +106,6 @@ def my_login(request):
             print("They used username: {} and password: {}".format(username,password))
             return HttpResponse("Invalid login details given")
     else:
-        return render(request, 'frontend/login.html')
+        return render(request, 'users/login.html')
+
 

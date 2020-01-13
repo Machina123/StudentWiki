@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} {{ block.super }} {% endblock %}
+
+{% block main_css %}
+{{ block.super }}
+{% endblock %}
+
+{% block sub_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'custom.css' %}">
+{% endblock %}
+
+{% block main_head_js %}
+
+{% endblock %}
+
+{% block sub_head_js %}
+{% endblock %}
+{% block body_block %}
+
+<div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form method="post" action="{% url 'user:register' %}">
+                <h1>REJESTRACJA</h1>
+                {% csrf_token %}
+
+                <input type="text" name="username" placeholder="Login" required="required">
+                <input type="email" name="email" placeholder="Email" required="required" />
+                <input type="password" name="password" placeholder="Hasło" required="required">
+        <button>UTWÓRZ KONTO</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+
+            <form method="post" action="{% url 'user:my_login' %}">
+                {% csrf_token %}
+                <h1>LOGOWANIE</h1>
+
+                <input type="text" name="username" placeholder="Login" required="required">
+                <input type="password" name="password" placeholder="Hasło" required="required">
+                <a href="{% url 'user:password_reset' %}">Zapomiałeś hasła?</a>
+                <button>Zaloguj się</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Witaj !</h1>
+                    <p> Aplikacja StudentWiki została stworzona w celu przekraczania granic! Wspólnie możemy więcej! </p>
+                    <button class="ghost" id="signIn">Zaloguj się</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Witaj!</h1>
+                    <p>Jeżeli nie masz konta zarejestruj się. Wspólnie możemy zdziałać dużo więcej!</p>
+                    <button class="ghost" id="signUp">Utwórz konto</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block main_foot_js %}
+{{ block.super }}
+{% endblock %}
+
+{% block sub_foot_js %}
+<script src="{% static 'custom.js' %}"></script>
+{% endblock %}

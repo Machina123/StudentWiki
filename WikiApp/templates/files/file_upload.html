@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}StudentWiki | Dodaj plik {% endblock %}
+
+{% block main_css %}
+{{ block.super }}
+{% endblock %}
+
+{% block sub_css %}
+{% endblock %}
+
+{% block main_head_js %}
+
+{% endblock %}
+
+{% block sub_head_js %}
+{% endblock %}
+
+{% block body_block %}
+    <h1>Upload a file</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Upload</button>
+    </form>
+{% endblock %}
+
+{% block main_foot_js %}
+{{ block.super }}
+{% endblock %}
+
+{% block sub_foot_js %}
+{% endblock %}
