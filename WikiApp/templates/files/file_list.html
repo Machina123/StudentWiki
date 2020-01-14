@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 
 {% block title %}StudentWiki | Lista plików {% endblock %}
 
@@ -16,19 +16,24 @@
 {% block sub_head_js %}
 {% endblock %}
 
-{% block body_block %}
-    <div class="row">
+ {% block navigation %}
+{{ block.super }}
+  {% endblock %}
+
+  {% block content %}
+<div class="row">
         <div class="col-sm-12 col-md-9">
             <h2>Files uploaded by users</h2>
         </div>
         <div class="col-sm-12 col-md-3"><a href="{% url 'files:file_upload' %}" class="btn btn-primary" role="button">Upload new file</a></div>
     </div>
+
     <div class="row">
     {% if object_list %}
         <table class="table table-hover">
             <tbody>
                 {% for file in object_list %}
-                    {% url "file_detail" file.file_id as file_uri %}
+                    {% url "files:file_detail" file.file_id as file_uri %}
                     <tr>
                         <td>{{ file.title }}</td>
                         <td>{{ file.description|truncatechars:50|default:"(no description provided)" }}</td>
@@ -45,7 +50,13 @@
         <div class="alert alert-danger" role="alert"><strong>Error: </strong>No files are available</div>
     {% endif %}
     </div>
-{% endblock %}
+  {% endblock %}
+
+  {% block footer %}
+{{ block.super }}
+  {% endblock %}
+
+
 
 {% block main_foot_js %}
 {{ block.super }}

@@ -18,8 +18,12 @@
 
 {% block sub_head_js %}
 {% endblock %}
-{% block body_block %}
 
+  {% block navigation %}
+
+  {% endblock %}
+
+  {% block content %}
 <div class="container" id="container">
         <div class="form-container sign-up-container">
             <form method="post" action="{% url 'user:register' %}">
@@ -59,8 +63,12 @@
             </div>
         </div>
     </div>
+  {% endblock %}
 
-{% endblock %}
+  {% block footer %}
+  {% endblock %}
+
+
 
 {% block main_foot_js %}
 {{ block.super }}

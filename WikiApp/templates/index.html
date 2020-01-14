@@ -19,22 +19,7 @@
 {% block sub_head_js %}
 {% endblock %}
 
-{% block body_block %}
-<!--<div class="container">-->
-<!--  <div class="jumbotron">-->
-<!--    <h1>Welcome to the Djungle !</h1>-->
-<!--    {% if user.is_authenticated %}-->
-<!--        <h2>Hello {{ user.username }}</h2>-->
-<!--      <p><a href="{% url 'user:change_password' %}">Change Password</a></p>-->
-<!--      <p><a href="{% url 'user:my_logout' %}">logout</a></p>-->
-
-<!--    {% else %}-->
-<!--        <h2>Register or Login if you'd like to</h2>-->
-
-<!--    {% endif %}-->
-<!--  </div>-->
-<!--</div>-->
-
+  {% block navigation %}
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
   <div class="container">
     <a class="navbar-brand" href="#">StudentWikiApp</a>
@@ -62,6 +47,10 @@
   </div>
 </nav>
 
+  {% endblock %}
+
+  {% block content %}
+
 <!-- Full Page Image Header with Vertically Centered Content -->
 <header class="masthead">
   <div class="container h-100">
@@ -74,20 +63,40 @@
   </div>
 </header>
 
-<!-- Page Content -->
 <section class="py-5">
   <div class="container">
     <h2 class="font-weight-light">Page Content</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus ab nulla dolorum autem nisi officiis blanditiis voluptatem hic, assumenda aspernatur facere ipsam nemo ratione cumque magnam enim fugiat reprehenderit expedita.</p>
   </div>
 </section>
+  {% endblock %}
 
+  {% block footer %}
 <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
     <div class="container text-center">
       <small>Copyright &copy;</small>
     </div>
   </footer>
-{% endblock %}
+  {% endblock %}
+
+<!--<div class="container">-->
+<!--  <div class="jumbotron">-->
+<!--    <h1>Welcome to the Djungle !</h1>-->
+<!--    {% if user.is_authenticated %}-->
+<!--        <h2>Hello {{ user.username }}</h2>-->
+<!--      <p><a href="{% url 'user:change_password' %}">Change Password</a></p>-->
+<!--      <p><a href="{% url 'user:my_logout' %}">logout</a></p>-->
+
+<!--    {% else %}-->
+<!--        <h2>Register or Login if you'd like to</h2>-->
+
+<!--    {% endif %}-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
+
 
 {% block main_foot_js %}
 {{ block.super }}

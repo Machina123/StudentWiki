@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 
 {% block title %}StudentWiki | Dodaj plik {% endblock %}
 
@@ -16,13 +16,27 @@
 {% block sub_head_js %}
 {% endblock %}
 
-{% block body_block %}
-    <h1>Upload a file</h1>
+  {% block navigation %}
+ {{ block.super }}
+  {% endblock %}
+
+  {% block content %}
+<div class="container py-5">
+ <h1>Upload a file</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn btn-success">Upload</button>
     </form>
+</div>
+  {% endblock %}
+
+  {% block footer %}
+{{ block.super }}
+  {% endblock %}
+
+{% block body_block %}
+
 {% endblock %}
 
 {% block main_foot_js %}

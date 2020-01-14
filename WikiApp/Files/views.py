@@ -22,4 +22,4 @@ class FileUploadView(LoginRequiredMixin, CreateView):
     model = FileModel
     template_name = "files/file_upload.html"
     form_class = FileUploadForm
-    success_url = reverse_lazy("file_list")
+    success_url = reverse_lazy("files:file_list")
