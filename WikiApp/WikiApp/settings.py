@@ -14,9 +14,9 @@ import os
 
 # linijki na Macbooki
 
-#import pymysql
+import pymysql
 
-#pymysql.install_as_MySQLdb()
+pymysql.install_as_MySQLdb()
 
 # koniec linijki
 
@@ -137,6 +137,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, '../static')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
+
 )
 
 STATIC_URL = '/static/'

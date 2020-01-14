@@ -1,7 +1,5 @@
 {% extends "base.html" %}
-
 {% load static %}
-
 {% block title %} {{ block.super }} {% endblock %}
 
 {% block main_css %}
@@ -20,9 +18,9 @@
 {% endblock %}
 
   {% block navigation %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+<nav class="navbar page-main-header navbar-expand-lg navbar-light fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#">StudentWikiApp</a>
+    <a class="navbar-brand" href="/"><img class="page-main-nav-logo" src="{% static '3_logo_up.png' %}" alt=""> StudentWikiApp</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -74,32 +72,33 @@
   {% block footer %}
 <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
     <div class="container text-center">
-      <small>Copyright &copy;</small>
+     <div class="row">
+       <div class="col-4">
+         <img class="page-footer-logo" src="{% static '3_logo_up.png' %}" alt="">
+       </div>
+       <div class="col-4">
+         <h4>Uniwersytet Pedagogiczny im. KEN <br>
+             Instytut Informatyki <br>
+             ul. Podchorążych 2, 30-084 Kraków
+         </h4>
+         <p> telefon: (+48 12) 662 78 45 <br>
+              ii@up.krakow.pl <br>
+              (+48 12) 662 78 46 <br>
+              fax: (+48 12) 662 78 46 <br>
+         </p>
+       </div>
+       <div class="col-4">
+         <h4>2020</h4>
+       </div>
+     </div>
     </div>
   </footer>
   {% endblock %}
 
-<!--<div class="container">-->
-<!--  <div class="jumbotron">-->
-<!--    <h1>Welcome to the Djungle !</h1>-->
-<!--    {% if user.is_authenticated %}-->
-<!--        <h2>Hello {{ user.username }}</h2>-->
-<!--      <p><a href="{% url 'user:change_password' %}">Change Password</a></p>-->
-<!--      <p><a href="{% url 'user:my_logout' %}">logout</a></p>-->
-
-<!--    {% else %}-->
-<!--        <h2>Register or Login if you'd like to</h2>-->
-
-<!--    {% endif %}-->
-<!--  </div>-->
-<!--</div>-->
-
-
-
-
 
 {% block main_foot_js %}
 {{ block.super }}
+<script src="{% static 'js/main.js' %}"></script>
 {% endblock %}
 
 {% block sub_foot_js %}

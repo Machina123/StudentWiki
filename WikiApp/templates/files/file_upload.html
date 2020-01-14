@@ -1,5 +1,7 @@
 {% extends "index.html" %}
 
+{% load static %}
+
 {% block title %}StudentWiki | Dodaj plik {% endblock %}
 
 {% block main_css %}
@@ -7,6 +9,7 @@
 {% endblock %}
 
 {% block sub_css %}
+{{ block.super }}
 {% endblock %}
 
 {% block main_head_js %}
@@ -21,14 +24,51 @@
   {% endblock %}
 
   {% block content %}
-<div class="container py-5">
- <h1>Upload a file</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-success">Upload</button>
-    </form>
+
+<section class="page-main-container bg-light">
+    <div class="page-content">
+  <div class="page-inner-content container h-100">
+      <div class="page-header">
+          <div class="page-block">
+              <div class="row h-100 align-items-center">
+                  <div class="col-md-12">
+                      <div class="page-header-title">
+                          <h5 class="m-b-10">Upload a file</h5>
+                      </div>
+                      <ul class="breadcrumb">
+                          <li class="breadcrumb-item"> <a href="/"><i class="fas fa-home"></i></a></li>
+                          <li class="breadcrumb-item"> <a href="#">Files</a></li>
+                          <li class="breadcrumb-item"> <a href="#"><strong>New file</strong></a></li>
+                      </ul>
+                  </div>
+                  <div class="main-body">
+                      <div class="page-wrapper">
+                          <div class="row">
+                              <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5 class="card-title">
+                                                New file
+                                            </h5>
+                                        </div>
+                                        <div class="card-body">
+                                             <form method="post" enctype="multipart/form-data">
+                                                {% csrf_token %}
+                                                {{ form.as_p }}
+                                                 <button type="submit" class="btn btn-success">Upload</button>
+                                             </form>
+                                        </div>
+                                    </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
 </div>
+</div>
+</section>
   {% endblock %}
 
   {% block footer %}
