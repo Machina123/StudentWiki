@@ -56,7 +56,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
+
+LOCALE_PATHS = (
+    os.path.join('StudentWiki/', 'locale/'),
+)
 
 ROOT_URLCONF = 'WikiApp.urls'
 
@@ -74,6 +79,7 @@ TEMPLATES = [
                 'static.translations.context_processor.index',
                 'static.translations.context_processor.files',
                 'static.translations.context_processor.footer',
+                'django.template.context_processors.i18n'
             ],
         },
     },
@@ -121,11 +127,18 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pl'
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
+
+ugettext = lambda s: s
+
+LANGUAGES = (
+    ('en', ugettext('English')),
+    ('pl', ugettext('Polish')),
+)
 
 USE_L10N = True
 

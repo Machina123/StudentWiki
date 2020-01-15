@@ -1,6 +1,7 @@
 from django.db import models
 import string
 import random
+from django.utils.translation import ugettext_lazy as _
 
 
 def generate_id():
@@ -10,6 +11,6 @@ def generate_id():
 
 class FileModel(models.Model):
     file_id = models.CharField(max_length=6, editable=False, primary_key=True, default=generate_id)
-    title = models.CharField(max_length=250, name="title", verbose_name="Tytuł")
-    description = models.TextField(name="description", verbose_name="Opis")
-    file = models.FileField(upload_to="uploads/", max_length=250, name="file", verbose_name="Plik")
+    title = models.CharField(max_length=250, name="title", verbose_name=_("Title"))
+    description = models.TextField(name="description", verbose_name=_('Description'))
+    file = models.FileField(upload_to="uploads/", max_length=250, name="file", verbose_name=_("File"))

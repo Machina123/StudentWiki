@@ -1,25 +1,26 @@
+from django.utils.translation import ugettext_lazy as _
+
 def index(request):
     return {
         'project_name': 'StudentWiki',
-        'logout': 'Wyloguj',
-        'upload': 'Dodaj plik',
-        'file_list': 'Lista plików',
-        'contact': 'Kontakt',
+        'logout': _('Logout'),
+        'contact': _('Contact'),
     }
 
 def files(request):
     return {
-        'file_upload': 'Dodaj plik',
-        'files': 'Dodane pliki',
-        'new_file': 'Dodaj nowy plik',
-        'file_list': 'Lista plików',
-        'file_preview': 'Podgląd pliku',
-        'file_description': 'Opis pliku',
-        'download': "Pobierz",
-        'users_file': 'Pliki dodane przez użytkowników',
-        'details': 'Szczegóły',
-        'error': 'Błąd',
-        'no_files': 'Nie znaleziono plików',
+        'upload': _('Upload file'),
+        'file_list': _('File list'),
+        'files': _('Uploaded files'),
+        'new_file': _('Upload new file'),
+        'file_preview': _('File preview'),
+        'file_description': _('File description'),
+        'download': _('Download'),
+        'file_upload': _("Upload"),
+        'users_file': _('Files added by users'),
+        'details': _('Details'),
+        'error': _('Error'),
+        'no_files': _('No such files exist'),
 
     }
 
