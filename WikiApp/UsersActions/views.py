@@ -53,10 +53,11 @@ def register(request):
                     'token': account_activation_token.make_token(user),
                 })
                 user.email_user(subject, message)
-                send_mail(subject, message, 'mateusz.bugaj@interia.pl', [user.email])
                 return redirect('users/account_activation_sent')
             else:
-                raise forms.ValidationError('Zły Email')
+                error = {'error_reg_div': 'Wrong Email. Use email from own university'}
+                return render(request, 'users/login.html', error)
+
         else:
             print(user_form.errors)
     else:
@@ -102,11 +103,11 @@ def my_login(request):
                 login(request, user)
                 return render(request, 'index.html')
             else:
-                return HttpResponse("Your account was inactive.")
+                error = {'error_log_div': 'Your account was inactive.'}
+                return render(request, 'users/login.html', error)
         else:
-            print("Someone tried to login and failed.")
-            print("They used username: {} and password: {}".format(username,password))
-            return HttpResponse("Invalid login details given")
+            error = {'error_log_div': 'Invalid login details given.'}
+            return render(request, 'users/login.html', error)
     else:
         return render(request, 'users/login.html')
 

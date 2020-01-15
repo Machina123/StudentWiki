@@ -47,6 +47,7 @@
                 <a href="{% url 'user:password_reset' %}">Zapomiałeś hasła?</a>
                 <button>Zaloguj się</button>
             </form>
+            <div class="alert">{{ error_log_div }}</div>
         </div>
         <div class="overlay-container">
             <div class="overlay">
@@ -61,6 +62,7 @@
                     <button class="ghost" id="signUp">Utwórz konto</button>
                 </div>
             </div>
+            <div class="alert">{{ error_reg_div }}</div>
         </div>
     </div>
   {% endblock %}
