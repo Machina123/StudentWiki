@@ -95,3 +95,44 @@ msgstr "Błąd"
 #: .\static\translations\context_processor.py:23
 msgid "No such files exist"
 msgstr "Brak plików"
+
+#: .\static\translations\context_processor.py:40
+msgid "Add resource"
+msgstr "Dodaj zasób"
+
+#: .\static\translations\context_processor.py:41
+msgid "Resource list"
+msgstr "Lista zasobów"
+
+#: .\static\translations\context_processor.py:42
+msgid "External resources"
+msgstr "Zasoby zewnętrzne"
+
+#: .\static\translations\context_processor.py:43
+msgid "Add new resource"
+msgstr "Dodaj nowy zasób"
+
+#: .\static\translations\context_processor.py:44
+msgid "Resource preview"
+msgstr "Podgląd zasobu"
+
+#: .\static\translations\context_processor.py:45
+msgid "Resource description"
+msgstr "Opis zasobu"
+
+#: .\static\translations\context_processor.py:46
+msgid "Open external resource"
+msgstr "Przejdź do zasobu zewnętrznego"
+
+#: .\static\translations\context_processor.py:47
+msgid "External resources added by users"
+msgstr "Zasoby zewnętrzne dodane przez użytkowników"
+
+#: .\static\translations\context_processor.py:48
+msgid "No resources available"
+msgstr "Brak dostępnych zasobów"
+
+#: .\static\translations\context_processor.py:49
+msgid "New external resource"
+msgstr "Nowy zasób zewnętrzny"
+

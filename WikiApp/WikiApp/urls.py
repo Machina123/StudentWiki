@@ -30,4 +30,5 @@ urlpatterns += i18n_patterns(
     path('', views.homepage, name="homepage"),
     path('user/', include('UsersActions.urls')),
     path('files/', include('Files.urls')),
+    path('resources/', include('resources.urls'))
 )

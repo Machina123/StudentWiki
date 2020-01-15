@@ -1,0 +1,50 @@
+{% extends "index.html" %}
+
+{% block title %}{{ project_name }} | {{ file_preview}} {% endblock %}
+
+{% block main_css %}
+{{ block.super }}
+{% endblock %}
+
+{% block sub_css %}
+    {{ block.super }}
+{% endblock %}
+
+{% block main_head_js %}
+
+{% endblock %}
+
+{% block sub_head_js %}
+{% endblock %}
+
+ {% block navigation %}
+    {{ block.super }}
+  {% endblock %}
+
+  {% block content %}
+<div class="container">
+  <h1>{{ object.title }}</h1>
+    <p><strong>{{ file_description }}</strong>: {{ object.description|default:"(not provided)" }}</p>
+    <p>
+        <a href="{{ object.resource_uri }}" class="btn btn-success" target="_blank">
+            <span class="glyphicon glyphicon-globe"></span> {{ res_open }}
+        </a><br>
+        <span class="text-muted">{{ object.resource_uri }}</span>
+    </p>
+</div>
+  {% endblock %}
+
+  {% block footer %}
+    {{ block.super }}
+  {% endblock %}
+
+{% block body_block %}
+
+{% endblock %}
+
+{% block main_foot_js %}
+{{ block.super }}
+{% endblock %}
+
+{% block sub_foot_js %}
+{% endblock %}

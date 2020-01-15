@@ -1,0 +1,87 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block title %}StudentWiki | Dodaj plik {% endblock %}
+
+{% block main_css %}
+{{ block.super }}
+{% endblock %}
+
+{% block sub_css %}
+{{ block.super }}
+{% endblock %}
+
+{% block main_head_js %}
+
+{% endblock %}
+
+{% block sub_head_js %}
+{% endblock %}
+
+  {% block navigation %}
+ {{ block.super }}
+  {% endblock %}
+
+  {% block content %}
+
+<section class="page-main-container bg-light">
+    <div class="page-content">
+  <div class="page-inner-content container h-100">
+      <div class="page-header">
+          <div class="page-block">
+              <div class="row h-100 align-items-center">
+                  <div class="col-md-12">
+                      <div class="page-header-title">
+                          <h5 class="m-b-10">{{ res_creation }}</h5>
+                      </div>
+                      <ul class="breadcrumb">
+                          <li class="breadcrumb-item"> <a href="/"><i class="fas fa-home"></i></a></li>
+                          <li class="breadcrumb-item"> <a href="#">{{ resources }}</a></li>
+                          <li class="breadcrumb-item"> <a href="#"><strong>{{ new_res }}</strong></a></li>
+                      </ul>
+                  </div>
+                  <div class="main-body">
+                      <div class="page-wrapper">
+                          <div class="row">
+                              <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5 class="card-title">
+                                                {{ new_file }}
+                                            </h5>
+                                        </div>
+                                        <div class="card-body">
+                                             <form method="post">
+                                                {% csrf_token %}
+                                                {{ form.as_p }}
+                                                 <button type="submit" class="btn btn-success">{{ add_res }}</button>
+                                             </form>
+                                        </div>
+                                    </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+</div>
+</div>
+</section>
+  {% endblock %}
+
+  {% block footer %}
+{{ block.super }}
+  {% endblock %}
+
+{% block body_block %}
+
+{% endblock %}
+
+{% block main_foot_js %}
+{{ block.super }}
+{% endblock %}
+
+{% block sub_foot_js %}
+{% endblock %}

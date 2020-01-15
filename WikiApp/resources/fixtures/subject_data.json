@@ -1,0 +1,527 @@
+[
+  {
+    "model": "resources.subject",
+    "pk": 1,
+    "fields": {
+      "sub_name": "Wst\u0119p do matematyki"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 2,
+    "fields": {
+      "sub_name": "Podstawy programowania"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 3,
+    "fields": {
+      "sub_name": "Wprowadzenie do system\u00f3w operacyjnych"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 4,
+    "fields": {
+      "sub_name": "Teoretyczne podstawy informatyki"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 5,
+    "fields": {
+      "sub_name": "Oprogramowanie u\u017cytkowe"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 6,
+    "fields": {
+      "sub_name": "Komputerowa grafika u\u017cytkowa"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 7,
+    "fields": {
+      "sub_name": "Podstawy przedsi\u0119biorczo\u015bci dla informatyk\u00f3w"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 8,
+    "fields": {
+      "sub_name": "Algorytmy i struktury danych"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 9,
+    "fields": {
+      "sub_name": "Matematyka 1"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 10,
+    "fields": {
+      "sub_name": "Organizacja i architektura komputer\u00f3w"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 11,
+    "fields": {
+      "sub_name": "J\u0119zyki hipertekstowe i tworzenie stron WWW"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 12,
+    "fields": {
+      "sub_name": "Programowanie proceduralne"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 13,
+    "fields": {
+      "sub_name": "J\u0119zyk obcy"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 14,
+    "fields": {
+      "sub_name": "Matematyka 2"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 15,
+    "fields": {
+      "sub_name": "Programowanie obiektowe"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 16,
+    "fields": {
+      "sub_name": "Systemy operacyjne"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 17,
+    "fields": {
+      "sub_name": "Przetwarzanie dokument\u00f3w XML i zaawansowane techniki WWW"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 18,
+    "fields": {
+      "sub_name": "Komunikacja i zarz\u0105dzanie projektami"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 19,
+    "fields": {
+      "sub_name": "Sieci komputerowe"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 20,
+    "fields": {
+      "sub_name": "J\u0119zyki skryptowe"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 21,
+    "fields": {
+      "sub_name": "Fizyczne podstawy dzia\u0142ania urz\u0105dze\u0144 informatycznych"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 22,
+    "fields": {
+      "sub_name": "Wst\u0119p do programowania w j\u0119zyku Java"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 23,
+    "fields": {
+      "sub_name": "Relacyjne bazy danych"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 24,
+    "fields": {
+      "sub_name": "Metody badawcze w informatyce"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 25,
+    "fields": {
+      "sub_name": "Komputerowe wspomaganie zada\u0144 in\u017cynierskich"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 26,
+    "fields": {
+      "sub_name": "Elektronika"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 27,
+    "fields": {
+      "sub_name": "Metody numeryczne"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 28,
+    "fields": {
+      "sub_name": "Bazy danych w aplikacjach internetowych"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 29,
+    "fields": {
+      "sub_name": "In\u017cynieria oprogramowania"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 30,
+    "fields": {
+      "sub_name": "Systemy czasu rzeczywistego"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 31,
+    "fields": {
+      "sub_name": "Sztuczna inteligencja"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 32,
+    "fields": {
+      "sub_name": "Systemy wbudowane"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 33,
+    "fields": {
+      "sub_name": "Wybrane aspekty automatyki i robotyki"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 34,
+    "fields": {
+      "sub_name": "Kryptografia i bezpiecze\u0144stwo system\u00f3w komputerowych"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 35,
+    "fields": {
+      "sub_name": "Informatyka kwantowa"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 36,
+    "fields": {
+      "sub_name": "Programowanie grafiki"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 37,
+    "fields": {
+      "sub_name": "Podstawy modelowania i symulacji"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 38,
+    "fields": {
+      "sub_name": "Testowanie oprogramowania"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 39,
+    "fields": {
+      "sub_name": "Wzorce projektowe"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 40,
+    "fields": {
+      "sub_name": "In\u017cynieria i analiza danych"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 41,
+    "fields": {
+      "sub_name": "Przetwarzanie obraz\u00f3w cyfrowych"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 42,
+    "fields": {
+      "sub_name": "Problemy spo\u0142eczne i zawodowe informatyki"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 43,
+    "fields": {
+      "sub_name": "Administracja i integracja system\u00f3w operacyjnych"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 44,
+    "fields": {
+      "sub_name": "Integracja sieci i us\u0142ug"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 45,
+    "fields": {
+      "sub_name": "Programowanie obiektowe 2"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 46,
+    "fields": {
+      "sub_name": "Bezpiecze\u0144stwo informacji"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 47,
+    "fields": {
+      "sub_name": "Java - programowanie sieciowe"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 48,
+    "fields": {
+      "sub_name": "Podstawy programowania wsp\u00f3\u0142bie\u017cnego"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 49,
+    "fields": {
+      "sub_name": "Projektowanie aplikacji internetowych"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 50,
+    "fields": {
+      "sub_name": "Administracja serwerami WWW"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 51,
+    "fields": {
+      "sub_name": "Metody wsp\u00f3\u0142czesnej komunikacji"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 52,
+    "fields": {
+      "sub_name": "Konfiguracja i zarz\u0105dzanie systemami CMS"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 53,
+    "fields": {
+      "sub_name": "Badanie interfejs\u00f3w z analiz\u0105 danych statystycznych"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 54,
+    "fields": {
+      "sub_name": "Rzeczywisto\u015b\u0107 wirtualna"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 55,
+    "fields": {
+      "sub_name": "E-biznes"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 56,
+    "fields": {
+      "sub_name": "Modelowanie 3D"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 57,
+    "fields": {
+      "sub_name": "Animacje komputerowe"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 58,
+    "fields": {
+      "sub_name": "Wprowadzenie do psychologii dla nauczycieli"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 59,
+    "fields": {
+      "sub_name": "Pedagogika dla nauczycieli"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 60,
+    "fields": {
+      "sub_name": "Podstawy psychologii rozwojowej dla nauczycieli"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 61,
+    "fields": {
+      "sub_name": "Podstawy psychologii klinicznej dla nauczycieli"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 62,
+    "fields": {
+      "sub_name": "Organizacja pracy szko\u0142y z elementami prawa o\u015bwiatowego"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 63,
+    "fields": {
+      "sub_name": "Dydaktyka og\u00f3lna"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 64,
+    "fields": {
+      "sub_name": "Dydaktyka informatyki 1"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 65,
+    "fields": {
+      "sub_name": "Wizualne j\u0119zyki programowania i programowanie w Pythonie"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 66,
+    "fields": {
+      "sub_name": "Dydaktyka informatyki 2"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 67,
+    "fields": {
+      "sub_name": "\u0106wiczenia praktyczne w szkole podstawowej z zakresu dydaktyki informatyki"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 68,
+    "fields": {
+      "sub_name": "Diagnoza edukacyjna"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 69,
+    "fields": {
+      "sub_name": "Kultura j\u0119zyka z emisja g\u0142osu"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 70,
+    "fields": {
+      "sub_name": "Wirtualne \u015brodowisko uczenia si\u0119 i nauczania"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 71,
+    "fields": {
+      "sub_name": "Projektowanie i programowanie robot\u00f3w edukacyjnych"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 72,
+    "fields": {
+      "sub_name": "Administracja serwerem sieci lokalnej"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 73,
+    "fields": {
+      "sub_name": "Design thinking - projekt edukacyjny"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 74,
+    "fields": {
+      "sub_name": "In\u017cynierski projekt zespo\u0142owy"
+    }
+  },
+  {
+    "model": "resources.subject",
+    "pk": 75,
+    "fields": {
+      "sub_name": "Inny / Other"
+    }
+  }
+]
