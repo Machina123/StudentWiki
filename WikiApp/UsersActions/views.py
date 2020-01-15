@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, render_to_response
 from django.contrib.sites.shortcuts import get_current_site
+from django.template import RequestContext
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes, force_text
@@ -16,7 +17,9 @@ from django.conf import settings
 
 @login_required
 def home(request):
+    # return render_to_response('index.html', context_instance=RequestContext(request))
     return render(request, 'index.html')
+
 
 @login_required
 def my_logout(request):
@@ -37,7 +40,7 @@ def register(request):
         user_form = UserForm(data=request.POST)
         if user_form.is_valid():
             user = user_form.save(commit=False)
-            if(CheckEmail(user.email)):
+            if check_email(user.email):
                 user.is_active = False
                 user.set_password(user.password)
                 user.save()
@@ -58,12 +61,11 @@ def register(request):
             print(user_form.errors)
     else:
         user_form = UserForm()
-    return render(request, 'users/login.html',
-                          {'user_form': user_form})
+    return render(request, 'users/login.html', {'user_form': user_form})
 
 
-def CheckEmail(email):
-    if(email[email.index('@') + 1:] == 'student.up.krakow.pl'):
+def check_email(email):
+    if email[email.index('@') + 1:] == 'student.up.krakow.pl':
         return True
     else:
         return False
@@ -97,7 +99,7 @@ def my_login(request):
         user = authenticate(username=username, password=password)
         if user:
             if user.is_active:
-                login(request,user)
+                login(request, user)
                 return render(request, 'index.html')
             else:
                 return HttpResponse("Your account was inactive.")

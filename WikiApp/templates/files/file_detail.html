@@ -1,6 +1,6 @@
 {% extends "index.html" %}
 
-{% block title %}StudentWiki | Podgląd pliku {% endblock %}
+{% block title %}{{ project_name }} | {{ file_preview}} {% endblock %}
 
 {% block main_css %}
 {{ block.super }}
@@ -23,10 +23,10 @@
   {% block content %}
 <div class="container">
   <h1>{{ object.title }}</h1>
-    <p><strong>Description</strong>: {{ object.description|default:"(not provided)" }}</p>
+    <p><strong>{{ file_description }}</strong>: {{ object.description|default:"(not provided)" }}</p>
     <p>
         <a href="{{ object.file.url }}" class="btn btn-success">
-            <span class="glyphicon glyphicon-floppy-save"></span> Download
+            <span class="glyphicon glyphicon-floppy-save"></span> {{ download }}
         </a>
     </p>
 </div>

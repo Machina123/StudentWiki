@@ -8,6 +8,6 @@ class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
     email = forms.EmailField(max_length=254, help_text='Required. You need email from UP Krakow')
 
-    class Meta():
+    class Meta:
         model = User
         fields = ('username', 'email', 'password')

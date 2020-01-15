@@ -22,10 +22,12 @@
 
   {% block content %}
 <div class="row">
-        <div class="col-sm-12 col-md-9">
-            <h2>Files uploaded by users</h2>
-        </div>
-        <div class="col-sm-12 col-md-3"><a href="{% url 'files:file_upload' %}" class="btn btn-primary" role="button">Upload new file</a></div>
+    <div class="col-sm-12 col-md-9">
+        <h2>{{ users_file }}</h2>
+    </div>
+    <div class="col-sm-12 col-md-3">
+        <a href="{% url 'files:file_upload' %}" class="btn btn-primary" role="button">{{ new_file }}</a>
+    </div>
     </div>
 
     <div class="row">
@@ -39,7 +41,7 @@
                         <td>{{ file.description|truncatechars:50|default:"(no description provided)" }}</td>
                         <td class="text-right">
                             <a href="{{ file_uri }}" class="btn btn-primary" role="button">
-                                <span class="glyphicon glyphicon-download"></span> Details
+                                <span class="glyphicon glyphicon-download"></span> {{ details }}
                             </a>
                         </td>
                     </tr>
@@ -47,7 +49,7 @@
             </tbody>
         </table>
     {% else %}
-        <div class="alert alert-danger" role="alert"><strong>Error: </strong>No files are available</div>
+        <div class="alert alert-danger" role="alert"><strong>{{ error }} </strong>{{ no_files }}</div>
     {% endif %}
     </div>
   {% endblock %}

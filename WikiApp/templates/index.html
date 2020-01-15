@@ -20,25 +20,25 @@
   {% block navigation %}
 <nav class="navbar page-main-header navbar-expand-lg navbar-light fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="/"><img class="page-main-nav-logo" src="{% static '3_logo_up.png' %}" alt=""> StudentWikiApp</a>
+    <a class="navbar-brand" href="/"><img class="page-main-nav-logo" src="{% static '3_logo_up.png' %}" alt=""> {{ project_name }}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'files:file_upload' %}">{{ upload }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'files:file_list' %}">{{ file_list }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">{{ contact }}</a>
+        </li>
         <li class="nav-item active">
-          <a class="nav-link" href="{% url 'user:my_logout' %}">Logout
-                <span class="sr-only">(current)</span>
-              </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'files:file_upload' %}">Upload</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'files:file_list' %}">File list</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="{% url 'user:my_logout' %}">{{ logout }}
+            <span class="sr-only">(current)</span>
+            </a>
         </li>
       </ul>
     </div>
@@ -77,14 +77,12 @@
          <img class="page-footer-logo" src="{% static '3_logo_up.png' %}" alt="">
        </div>
        <div class="col-4">
-         <h4>Uniwersytet Pedagogiczny im. KEN <br>
-             Instytut Informatyki <br>
-             ul. Podchorążych 2, 30-084 Kraków
+         <h4>{{ university_name }} <br>
+             {{ institute_name }} <br>
+             {{ address }}
          </h4>
-         <p> telefon: (+48 12) 662 78 45 <br>
-              ii@up.krakow.pl <br>
-              (+48 12) 662 78 46 <br>
-              fax: (+48 12) 662 78 46 <br>
+         <p> {{ phone }}
+             {{ email }} <br>
          </p>
        </div>
        <div class="col-4">

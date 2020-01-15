@@ -16,7 +16,6 @@ import os
 
 import pymysql
 
-pymysql.install_as_MySQLdb()
 
 # koniec linijki
 
@@ -72,6 +71,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'static.translations.context_processor.index',
+                'static.translations.context_processor.files',
+                'static.translations.context_processor.footer',
             ],
         },
     },

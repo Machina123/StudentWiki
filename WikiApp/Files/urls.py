@@ -4,7 +4,7 @@ from .views import FileListView, FileDetailView, FileUploadView
 from django.conf import settings
 from django.conf.urls.static import static
 
-app_name = 'files';
+app_name = 'files'
 
 urlpatterns = [
     url(r'list/', FileListView.as_view(), name="file_list"),

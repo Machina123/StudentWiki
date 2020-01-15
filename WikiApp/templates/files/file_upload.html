@@ -33,12 +33,12 @@
               <div class="row h-100 align-items-center">
                   <div class="col-md-12">
                       <div class="page-header-title">
-                          <h5 class="m-b-10">Upload a file</h5>
+                          <h5 class="m-b-10">{{ file_upload }}</h5>
                       </div>
                       <ul class="breadcrumb">
                           <li class="breadcrumb-item"> <a href="/"><i class="fas fa-home"></i></a></li>
-                          <li class="breadcrumb-item"> <a href="#">Files</a></li>
-                          <li class="breadcrumb-item"> <a href="#"><strong>New file</strong></a></li>
+                          <li class="breadcrumb-item"> <a href="#">{{ files }}</a></li>
+                          <li class="breadcrumb-item"> <a href="#"><strong>{{ new_file }}</strong></a></li>
                       </ul>
                   </div>
                   <div class="main-body">
@@ -48,14 +48,14 @@
                                     <div class="card">
                                         <div class="card-header">
                                             <h5 class="card-title">
-                                                New file
+                                                {{ new_file }}
                                             </h5>
                                         </div>
                                         <div class="card-body">
                                              <form method="post" enctype="multipart/form-data">
                                                 {% csrf_token %}
                                                 {{ form.as_p }}
-                                                 <button type="submit" class="btn btn-success">Upload</button>
+                                                 <button type="submit" class="btn btn-success">{{ file_upload }}</button>
                                              </form>
                                         </div>
                                     </div>
