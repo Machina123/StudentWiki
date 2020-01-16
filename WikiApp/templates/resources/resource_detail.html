@@ -24,12 +24,20 @@
   {% block content %}
 <div class="container">
   <h1>{{ object.title }}</h1>
-    <p><strong>{{ file_description }}</strong>: {{ object.description|default:"(not provided)" }}</p>
+    <p><strong>{{ owner }}</strong>: {{ object.rsrc_owner.username }}</p>
+    <p><strong>{{ res_description }}</strong>: {{ object.description|default:"(not provided)" }}</p>
+    <p><strong>{{ res_address }}</strong>: {{ object.resource_uri }}</p>
     <p>
         <a href="{{ object.resource_uri }}" class="btn btn-success" target="_blank">
-            <span class="glyphicon glyphicon-globe"></span> {{ res_open }}
-        </a><br>
-        <span class="text-muted">{{ object.resource_uri }}</span>
+            <i class="fas fa-globe-europe"></i> {{ res_open }}
+        </a>
+        {% if object.rsrc_owner == request.user %}
+            {% url "resources:resource_delete" object.resource_id as delete_uri %}
+            <a href="delete" class="btn btn-danger">
+                <i class="fas fa-trash"></i> {{ res_remove }}
+            </a>
+        {% endif %}
+        <br>
     </p>
 </div>
   {% endblock %}

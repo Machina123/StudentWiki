@@ -1,6 +1,6 @@
 {% extends "index.html" %}
 
-{% block title %}StudentWiki | Lista plików {% endblock %}
+{% block title %}{{ project_name }} | {{ res_list }}{% endblock %}
 
 {% block main_css %}
     {{ block.super }}
@@ -34,9 +34,9 @@
 
         <div class="row">
             {% if object_list %}
-                {% regroup object_list|dictsort:"subject.sub_name" by subject.sub_name as res_list %}
+                {% regroup object_list|dictsort:"rsrc_subject.sub_name" by rsrc_subject.sub_name as res_list %}
                 {% for res_group in res_list %}
-                    <h3>{{ res_group.grouper }}</h3>
+                    <h5>{{ res_group.grouper }}</h5>
                     <table class="table table-hover">
                         <tbody>
                         {% for resource_obj in res_group.list %}
@@ -47,7 +47,7 @@
                                     {{ resource_obj.description|truncatechars:50|default:"(no description provided)" }}</td>
                                 <td class="text-right">
                                     <a href="{{ resource_uri }}" class="btn btn-primary" role="button">
-                                        <span class="glyphicon glyphicon-download"></span> {{ details }}
+                                         {{ details }}
                                     </a>
                                 </td>
 

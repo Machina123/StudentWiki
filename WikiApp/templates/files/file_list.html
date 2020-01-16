@@ -3,10 +3,11 @@
 {% block title %}StudentWiki | Lista plików {% endblock %}
 
 {% block main_css %}
-{{ block.super }}
+    {{ block.super }}
 {% endblock %}
 
 {% block sub_css %}
+    {{ block.super }}
 {% endblock %}
 
 {% block main_head_js %}
@@ -16,52 +17,58 @@
 {% block sub_head_js %}
 {% endblock %}
 
- {% block navigation %}
-{{ block.super }}
-  {% endblock %}
+{% block navigation %}
+    {{ block.super }}
+{% endblock %}
 
-  {% block content %}
-<div class="row">
-    <div class="col-sm-12 col-md-9">
-        <h2>{{ users_file }}</h2>
-    </div>
-    <div class="col-sm-12 col-md-3">
-        <a href="{% url 'files:file_upload' %}" class="btn btn-primary" role="button">{{ new_file }}</a>
-    </div>
+{% block content %}
+    <div class="row">
+        <div class="col-sm-12 col-md-9">
+            <h2>{{ users_file }}</h2>
+        </div>
+        <div class="col-sm-12 col-md-3">
+            <a href="{% url 'files:file_upload' %}" class="btn btn-primary" role="button">{{ new_file }}</a>
+        </div>
     </div>
 
     <div class="row">
-    {% if object_list %}
-        <table class="table table-hover">
-            <tbody>
-                {% for file in object_list %}
-                    {% url "files:file_detail" file.file_id as file_uri %}
-                    <tr>
-                        <td>{{ file.title }}</td>
-                        <td>{{ file.description|truncatechars:50|default:"(no description provided)" }}</td>
-                        <td class="text-right">
-                            <a href="{{ file_uri }}" class="btn btn-primary" role="button">
-                                <span class="glyphicon glyphicon-download"></span> {{ details }}
-                            </a>
-                        </td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    {% else %}
-        <div class="alert alert-danger" role="alert"><strong>{{ error }} </strong>{{ no_files }}</div>
-    {% endif %}
-    </div>
-  {% endblock %}
+        {% if object_list %}
+            {% regroup object_list|dictsort:"file_subject.sub_name" by file_subject.sub_name as file_list %}
+            {% for file_group in file_list %}
+                <h5>{{ file_group.grouper }}</h5>
+                <table class="table table-hover">
+                    <tbody>
+                    {% for file_obj in file_group.list %}
+                        <tr>
+                            {% url "files:file_detail" file_obj.file_id as file_uri %}
+                            <td>{{ file_obj.title }}</td>
+                            <td>
+                                {{ file_obj.description|truncatechars:50|default:"(no description provided)" }}</td>
+                            <td class="text-right">
+                                <a href="{{ file_uri }}" class="btn btn-primary" role="button">
+                                    {{ details }}
+                                </a>
+                            </td>
 
-  {% block footer %}
-{{ block.super }}
-  {% endblock %}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% endfor %}
+        {% else %}
+            <div class="alert alert-danger" role="alert"><strong>{{ error }} </strong>{{ no_files }}</div>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {{ block.super }}
+{% endblock %}
 
 
 
 {% block main_foot_js %}
-{{ block.super }}
+    {{ block.super }}
 {% endblock %}
 
 {% block sub_foot_js %}

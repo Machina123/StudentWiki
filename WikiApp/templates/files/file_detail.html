@@ -7,6 +7,7 @@
 {% endblock %}
 
 {% block sub_css %}
+    {{ block.super }}
 {% endblock %}
 
 {% block main_head_js %}
@@ -23,11 +24,18 @@
   {% block content %}
 <div class="container">
   <h1>{{ object.title }}</h1>
+    <p><strong>{{ owner }}</strong>: {{ object.file_owner.username }}</p>
     <p><strong>{{ file_description }}</strong>: {{ object.description|default:"(not provided)" }}</p>
     <p>
         <a href="{{ object.file.url }}" class="btn btn-success">
             <span class="glyphicon glyphicon-floppy-save"></span> {{ download }}
         </a>
+        {% if object.file_owner == request.user %}
+            {% url "files:file_delete" object.file_id as delete_uri %}
+            <a href="delete" class="btn btn-danger">
+                <i class="fas fa-trash"></i> {{ file_remove }}
+            </a>
+        {% endif %}
     </p>
 </div>
   {% endblock %}

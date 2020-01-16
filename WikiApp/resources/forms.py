@@ -1,9 +1,10 @@
 from django import forms
 from .models import Subject, ExternalResource
+from django.utils.translation import ugettext_lazy as _
 
 class ExternalResourceForm(forms.ModelForm):
-    subject = forms.ModelChoiceField(queryset=Subject.objects.all(), empty_label="-------", to_field_name="sub_name")
+    rsrc_subject = forms.ModelChoiceField(queryset=Subject.objects.all(), empty_label="-------", label=_("Subject"))
 
     class Meta:
         model = ExternalResource
-        exclude = ["resource_id"]
+        exclude = ["resource_id", "rsrc_owner"]

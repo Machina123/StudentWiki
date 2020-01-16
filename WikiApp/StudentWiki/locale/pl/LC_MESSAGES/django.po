@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-15 20:01+0100\n"
+"POT-Creation-Date: 2020-01-16 11:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,119 +20,139 @@ msgstr ""
 "%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
 "%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: .\Files\models.py:14
+#: Files/forms.py:10 Files/models.py:21 resources/forms.py:6
+#: resources/models.py:14 resources/models.py:24
+msgid "Subject"
+msgstr "Przedmiot"
+
+#: Files/models.py:17 resources/models.py:21
 msgid "Title"
 msgstr "Tytuł"
 
-#: .\Files\models.py:15
+#: Files/models.py:18
 msgid "Description"
 msgstr "Opis pliku"
 
-#: .\Files\models.py:16
+#: Files/models.py:19
 msgid "File"
 msgstr "Plik"
 
-#: .\WikiApp\settings.py:139
+#: WikiApp/settings.py:140 WikiApp/settings_dev.py:134
 msgid "English"
 msgstr "Angielski"
 
-#: .\WikiApp\settings.py:140
+#: WikiApp/settings.py:141 WikiApp/settings_dev.py:135
 msgid "Polish"
 msgstr "Polski"
 
-#: .\static\translations\context_processor.py:6
-msgid "Logout"
-msgstr "Wyloguj"
-
-#: .\static\translations\context_processor.py:7
-msgid "Contact"
-msgstr "Kontakt"
-
-#: .\static\translations\context_processor.py:12
-msgid "Upload file"
-msgstr "Dodaj plik"
-
-#: .\static\translations\context_processor.py:13
-msgid "File list"
-msgstr "Lista plików"
-
-#: .\static\translations\context_processor.py:14
-msgid "Uploaded files"
-msgstr "Dodane pliki"
-
-#: .\static\translations\context_processor.py:15
-msgid "Upload new file"
-msgstr "Dodaj nowy plik"
-
-#: .\static\translations\context_processor.py:16
-msgid "File preview"
-msgstr "Podgląd"
-
-#: .\static\translations\context_processor.py:17
-msgid "File description"
-msgstr "Opis pliku"
-
-#: .\static\translations\context_processor.py:18
-msgid "Download"
-msgstr "Pobierz"
-
-#: .\static\translations\context_processor.py:19
-msgid "Upload"
-msgstr "Dodaj plik"
-
-#: .\static\translations\context_processor.py:20
-msgid "Files added by users"
-msgstr "Pliki dodane przez użytkowników"
-
-#: .\static\translations\context_processor.py:21
-msgid "Details"
-msgstr "Szczegóły"
-
-#: .\static\translations\context_processor.py:22
-msgid "Error"
-msgstr "Błąd"
-
-#: .\static\translations\context_processor.py:23
-msgid "No such files exist"
-msgstr "Brak plików"
-
-#: .\static\translations\context_processor.py:40
-msgid "Add resource"
-msgstr "Dodaj zasób"
-
-#: .\static\translations\context_processor.py:41
-msgid "Resource list"
-msgstr "Lista zasobów"
-
-#: .\static\translations\context_processor.py:42
-msgid "External resources"
-msgstr "Zasoby zewnętrzne"
-
-#: .\static\translations\context_processor.py:43
-msgid "Add new resource"
-msgstr "Dodaj nowy zasób"
-
-#: .\static\translations\context_processor.py:44
-msgid "Resource preview"
-msgstr "Podgląd zasobu"
-
-#: .\static\translations\context_processor.py:45
+#: resources/models.py:22 static/translations/context_processor.py:46
 msgid "Resource description"
 msgstr "Opis zasobu"
 
-#: .\static\translations\context_processor.py:46
+#: resources/models.py:23 static/translations/context_processor.py:52
+msgid "Resource address"
+msgstr "Adres zasobu"
+
+#: static/translations/context_processor.py:6
+msgid "Logout"
+msgstr "Wyloguj"
+
+#: static/translations/context_processor.py:7
+msgid "Contact"
+msgstr "Kontakt"
+
+#: static/translations/context_processor.py:12
+msgid "Upload file"
+msgstr "Dodaj plik"
+
+#: static/translations/context_processor.py:13
+msgid "File list"
+msgstr "Lista plików"
+
+#: static/translations/context_processor.py:14
+msgid "Uploaded files"
+msgstr "Dodane pliki"
+
+#: static/translations/context_processor.py:15
+msgid "Upload new file"
+msgstr "Dodaj nowy plik"
+
+#: static/translations/context_processor.py:16
+msgid "File preview"
+msgstr "Podgląd"
+
+#: static/translations/context_processor.py:17
+msgid "File description"
+msgstr "Opis pliku"
+
+#: static/translations/context_processor.py:18
+msgid "Download"
+msgstr "Pobierz"
+
+#: static/translations/context_processor.py:19
+msgid "Upload"
+msgstr "Dodaj plik"
+
+#: static/translations/context_processor.py:20
+msgid "Files added by users"
+msgstr "Pliki dodane przez użytkowników"
+
+#: static/translations/context_processor.py:21
+msgid "Details"
+msgstr "Szczegóły"
+
+#: static/translations/context_processor.py:22
+msgid "Error"
+msgstr "Błąd"
+
+#: static/translations/context_processor.py:23
+msgid "No such files exist"
+msgstr "Brak plików"
+
+#: static/translations/context_processor.py:24
+msgid "Remove file"
+msgstr "Usuń plik"
+
+#: static/translations/context_processor.py:25
+msgid "Owner"
+msgstr "Właściciel"
+
+#: static/translations/context_processor.py:41
+msgid "Add resource"
+msgstr "Dodaj zasób"
+
+#: static/translations/context_processor.py:42
+msgid "Resource list"
+msgstr "Lista zasobów"
+
+#: static/translations/context_processor.py:43
+msgid "External resources"
+msgstr "Zasoby zewnętrzne"
+
+#: static/translations/context_processor.py:44
+msgid "Add new resource"
+msgstr "Dodaj nowy zasób"
+
+#: static/translations/context_processor.py:45
+msgid "Resource preview"
+msgstr "Podgląd zasobu"
+
+#: static/translations/context_processor.py:47
 msgid "Open external resource"
 msgstr "Przejdź do zasobu zewnętrznego"
 
-#: .\static\translations\context_processor.py:47
+#: static/translations/context_processor.py:48
 msgid "External resources added by users"
 msgstr "Zasoby zewnętrzne dodane przez użytkowników"
 
-#: .\static\translations\context_processor.py:48
+#: static/translations/context_processor.py:49
 msgid "No resources available"
 msgstr "Brak dostępnych zasobów"
 
-#: .\static\translations\context_processor.py:49
+#: static/translations/context_processor.py:50
 msgid "New external resource"
 msgstr "Nowy zasób zewnętrzny"
 
+#: static/translations/context_processor.py:51
+msgid "Remove resource"
+msgstr "Usuń zasób"
