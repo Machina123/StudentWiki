@@ -22,24 +22,64 @@
   {% endblock %}
 
   {% block content %}
-<div class="container">
-  <h1>{{ object.title }}</h1>
-    <p><strong>{{ owner }}</strong>: {{ object.rsrc_owner.username }}</p>
-    <p><strong>{{ res_description }}</strong>: {{ object.description|default:"(not provided)" }}</p>
-    <p><strong>{{ res_address }}</strong>: {{ object.resource_uri }}</p>
-    <p>
-        <a href="{{ object.resource_uri }}" class="btn btn-success" target="_blank">
-            <i class="fas fa-globe-europe"></i> {{ res_open }}
-        </a>
-        {% if object.rsrc_owner == request.user %}
-            {% url "resources:resource_delete" object.resource_id as delete_uri %}
-            <a href="delete" class="btn btn-danger">
-                <i class="fas fa-trash"></i> {{ res_remove }}
-            </a>
-        {% endif %}
-        <br>
-    </p>
+<section class="page-main-container bg-light">
+    <div class="page-content">
+  <div class="page-inner-content container h-100">
+      <div class="page-header">
+          <div class="page-block">
+              <div class="row h-100 align-items-center">
+                  <div class="col-md-12">
+                      <div class="page-header-title">
+                          <h5 class="m-b-10">{{ res_creation }}</h5>
+                      </div>
+                      <ul class="breadcrumb">
+                          {% block breadcrumbs %}
+                              {{ block.super }}
+                              <li class="breadcrumb-item">
+                                  <a href="{% url 'resources:resource_list' %}"> {{ resources }} </a>
+                              </li>
+                          {% endblock %}
+                          <li class="breadcrumb-item">{{ new_res }}</li>
+                      </ul>
+                  </div>
+                  <div class="main-body">
+                      <div class="page-wrapper">
+                          <div class="row">
+                              <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5 class="card-title">
+                                                {{ object.title }}
+                                            </h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <p><strong>{{ owner }}</strong>: {{ object.rsrc_owner.username }}</p>
+                                            <p><strong>{{ res_description }}</strong>: {{ object.description|default:"(not provided)" }}</p>
+                                            <p><strong>{{ res_address }}</strong>: {{ object.resource_uri }}</p>
+                                            <p>
+                                                <a href="{{ object.resource_uri }}" class="btn btn-success" target="_blank">
+                                                    <i class="fas fa-globe-europe"></i> {{ res_open }}
+                                                </a>
+                                                {% if object.rsrc_owner == request.user %}
+                                                    {% url "resources:resource_delete" object.resource_id as delete_uri %}
+                                                    <a href="delete" class="btn btn-danger">
+                                                        <i class="fas fa-trash"></i> {{ res_remove }}
+                                                    </a>
+                                                {% endif %}
+                                                <br>
+                                            </p>
+                                        </div>
+                                    </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
 </div>
+</div>
+</section>
   {% endblock %}
 
   {% block footer %}

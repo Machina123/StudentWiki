@@ -22,46 +22,75 @@
 {% endblock %}
 
   {% block content %}
-<div class="row">
-        {% block breadcrumbs %}
-            {{ block.super }} » {{ file_list }}
-        {% endblock %}
-    <div class="col-sm-12 col-md-9">
-        <h2>{{ users_file }}</h2>
-    </div>
-    <div class="col-sm-12 col-md-3">
-        <a href="{% url 'files:file_upload' %}" class="btn btn-primary" role="button">{{ new_file }}</a>
-    </div>
-    </div>
+<section class="page-main-container bg-light">
+    <div class="page-content">
+  <div class="page-inner-content container h-100">
+      <div class="page-header">
+          <div class="page-block">
+              <div class="row h-100 align-items-center">
+                  <div class="col-md-12">
+                      <div class="page-header-title">
+                          <h5 class="m-b-10">{{ file_upload }}</h5>
+                      </div>
+                      <ul class="breadcrumb">
+                          {% block breadcrumbs %}
+                              {{ block.super }}
+                              <li class="breadcrumb-item">
+                                  <a href="{% url 'resources:resource_list' %}"> {{ resources }} </a>
+                              </li>
+                          {% endblock %}
+                      </ul>
+                  </div>
+                  <div class="main-body">
+                      <div class="page-wrapper">
+                          <div class="row">
+                              <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5 class="card-title">
+                                                {{ new_file }}
+                                            </h5>
+                                        </div>
+                                        <div class="card-body">
+                                             {% if object_list %}
+                                            {% regroup object_list|dictsort:"file_subject.sub_name" by file_subject.sub_name as file_list %}
+                                            {% for file_group in file_list %}
+                                                <h5>{{ file_group.grouper }}</h5>
+                                                <table class="table table-hover">
+                                                    <tbody>
+                                                    {% for file_obj in file_group.list %}
+                                                        <tr>
+                                                            {% url "files:file_detail" file_obj.file_id as file_uri %}
+                                                            <td>{{ file_obj.title }}</td>
+                                                            <td>
+                                                                {{ file_obj.description|truncatechars:50|default:"(no description provided)" }}</td>
+                                                            <td class="text-right">
+                                                                <a href="{{ file_uri }}" class="btn btn-primary" role="button">
+                                                                    {{ details }}
+                                                                </a>
+                                                            </td>
 
-    <div class="row">
-        {% if object_list %}
-            {% regroup object_list|dictsort:"file_subject.sub_name" by file_subject.sub_name as file_list %}
-            {% for file_group in file_list %}
-                <h5>{{ file_group.grouper }}</h5>
-                <table class="table table-hover">
-                    <tbody>
-                    {% for file_obj in file_group.list %}
-                        <tr>
-                            {% url "files:file_detail" file_obj.file_id as file_uri %}
-                            <td>{{ file_obj.title }}</td>
-                            <td>
-                                {{ file_obj.description|truncatechars:50|default:"(no description provided)" }}</td>
-                            <td class="text-right">
-                                <a href="{{ file_uri }}" class="btn btn-primary" role="button">
-                                    {{ details }}
-                                </a>
-                            </td>
+                                                        </tr>
+                                                    {% endfor %}
+                                                    </tbody>
+                                                </table>
+                                            {% endfor %}
+                                        {% else %}
+                                            <div class="alert alert-danger" role="alert"><strong>{{ error }} </strong>{{ no_files }}</div>
+                                        {% endif %}
+                                        </div>
+                                    </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+</div>
+</div>
 
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-            {% endfor %}
-        {% else %}
-            <div class="alert alert-danger" role="alert"><strong>{{ error }} </strong>{{ no_files }}</div>
-        {% endif %}
-    </div>
+
 {% endblock %}
 
 {% block footer %}

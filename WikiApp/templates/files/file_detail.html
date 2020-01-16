@@ -22,22 +22,62 @@
   {% endblock %}
 
   {% block content %}
-<div class="container">
-  <h1>{{ object.title }}</h1>
-    <p><strong>{{ owner }}</strong>: {{ object.file_owner.username }}</p>
-    <p><strong>{{ file_description }}</strong>: {{ object.description|default:"(not provided)" }}</p>
-    <p>
-        <a href="{{ object.file.url }}" class="btn btn-success">
-            <span class="glyphicon glyphicon-floppy-save"></span> {{ download }}
-        </a>
-        {% if object.file_owner == request.user %}
-            {% url "files:file_delete" object.file_id as delete_uri %}
-            <a href="delete" class="btn btn-danger">
-                <i class="fas fa-trash"></i> {{ file_remove }}
-            </a>
-        {% endif %}
-    </p>
+<section class="page-main-container bg-light">
+    <div class="page-content">
+  <div class="page-inner-content container h-100">
+      <div class="page-header">
+          <div class="page-block">
+              <div class="row h-100 align-items-center">
+                  <div class="col-md-12">
+                      <div class="page-header-title">
+                          <h5 class="m-b-10">{{ res_creation }}</h5>
+                      </div>
+                      <ul class="breadcrumb">
+                          {% block breadcrumbs %}
+                              {{ block.super }}
+                              <li class="breadcrumb-item">
+                                  <a href="{% url 'resources:resource_list' %}"> {{ resources }} </a>
+                              </li>
+                          {% endblock %}
+                          <li class="breadcrumb-item">{{ new_res }}</li>
+                      </ul>
+                  </div>
+                  <div class="main-body">
+                      <div class="page-wrapper">
+                          <div class="row">
+                              <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5 class="card-title">
+                                                {{ new_res }}
+                                            </h5>
+                                        </div>
+                                        <div class="card-body">
+                                               <p><strong>{{ owner }}</strong>: {{ object.file_owner.username }}</p>
+                                                <p><strong>{{ file_description }}</strong>: {{ object.description|default:"(not provided)" }}</p>
+                                                <p>
+                                                    <a href="{{ object.file.url }}" class="btn btn-success">
+                                                        <span class="glyphicon glyphicon-floppy-save"></span> {{ download }}
+                                                    </a>
+                                                    {% if object.file_owner == request.user %}
+                                                        {% url "files:file_delete" object.file_id as delete_uri %}
+                                                        <a href="delete" class="btn btn-danger">
+                                                            <i class="fas fa-trash"></i> {{ file_remove }}
+                                                        </a>
+                                                    {% endif %}
+                                                </p>
+                                        </div>
+                                    </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
 </div>
+</div>
+</section>
   {% endblock %}
 
   {% block footer %}

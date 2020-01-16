@@ -53,7 +53,9 @@
 <!-- Full Page Image Header with Vertically Centered Content -->
 <header class="masthead">
       {% block breadcrumbs %}
+    <li class="breadcrumb-item">
           <a href= "/" ><i class="fas fa-home"></i></a>
+    </li>
       {% endblock %}
   <div class="container h-100">
     <div class="row h-100 align-items-center">
@@ -104,4 +106,5 @@
 {% endblock %}
 
 {% block sub_foot_js %}
+<script src="{% static 'js/components/homepage/homepage.js' %}"></script>
 {% endblock %}

@@ -37,9 +37,12 @@
                       </div>
                       <ul class="breadcrumb">
                           {% block breadcrumbs %}
-                              {{ block.super }} » <a href={% url "resources:resource_list" %}> {{ resources }} </a>
+                              {{ block.super }}
+                              <li class="breadcrumb-item">
+                                  <a href="{% url 'resources:resource_list' %}"> {{ resources }} </a>
+                              </li>
                           {% endblock %}
-                          » {{ new_res }}
+                          <li class="breadcrumb-item">{{ new_res }}</li>
                       </ul>
                   </div>
                   <div class="main-body">
