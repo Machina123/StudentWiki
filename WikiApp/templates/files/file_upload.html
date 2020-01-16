@@ -36,9 +36,10 @@
                           <h5 class="m-b-10">{{ file_upload }}</h5>
                       </div>
                       <ul class="breadcrumb">
-                          <li class="breadcrumb-item"> <a href="/"><i class="fas fa-home"></i></a></li>
-                          <li class="breadcrumb-item"> <a href="#">{{ files }}</a></li>
-                          <li class="breadcrumb-item"> <a href="#"><strong>{{ new_file }}</strong></a></li>
+                          {% block breadcrumbs %}
+                              {{ block.super }} » <a href={% url "files:file_list" %}>{{ files }}</a>
+                          {% endblock %}
+                           » {{ new_file }}
                       </ul>
                   </div>
                   <div class="main-body">

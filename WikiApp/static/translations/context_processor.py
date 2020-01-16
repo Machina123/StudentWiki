@@ -51,3 +51,4 @@ def resources(request):
         'res_remove': _('Remove resource'),
         'res_address': _('Resource address')
     }
+

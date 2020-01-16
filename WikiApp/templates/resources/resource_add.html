@@ -36,9 +36,10 @@
                           <h5 class="m-b-10">{{ res_creation }}</h5>
                       </div>
                       <ul class="breadcrumb">
-                          <li class="breadcrumb-item"> <a href="/"><i class="fas fa-home"></i></a></li>
-                          <li class="breadcrumb-item"> <a href="#">{{ resources }}</a></li>
-                          <li class="breadcrumb-item"> <a href="#"><strong>{{ new_res }}</strong></a></li>
+                          {% block breadcrumbs %}
+                              {{ block.super }} » <a href={% url "resources:resource_list" %}> {{ resources }} </a>
+                          {% endblock %}
+                          » {{ new_res }}
                       </ul>
                   </div>
                   <div class="main-body">

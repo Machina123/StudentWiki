@@ -21,14 +21,17 @@
     {{ block.super }}
 {% endblock %}
 
-{% block content %}
-    <div class="row">
-        <div class="col-sm-12 col-md-9">
-            <h2>{{ users_file }}</h2>
-        </div>
-        <div class="col-sm-12 col-md-3">
-            <a href="{% url 'files:file_upload' %}" class="btn btn-primary" role="button">{{ new_file }}</a>
-        </div>
+  {% block content %}
+<div class="row">
+        {% block breadcrumbs %}
+            {{ block.super }} » {{ file_list }}
+        {% endblock %}
+    <div class="col-sm-12 col-md-9">
+        <h2>{{ users_file }}</h2>
+    </div>
+    <div class="col-sm-12 col-md-3">
+        <a href="{% url 'files:file_upload' %}" class="btn btn-primary" role="button">{{ new_file }}</a>
+    </div>
     </div>
 
     <div class="row">

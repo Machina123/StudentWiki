@@ -23,6 +23,9 @@
 
 {% block content %}
     <div class="container">
+        {% block breadcrumbs %}
+            {{ block.super }} » {{ resources }}
+        {% endblock %}
         <div class="row">
             <div class="col-sm-12 col-md-9">
                 <h2>{{ users_res }}</h2>

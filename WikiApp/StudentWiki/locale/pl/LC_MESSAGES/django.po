@@ -37,6 +37,7 @@ msgstr "Opis pliku"
 msgid "File"
 msgstr "Plik"
 
+
 #: WikiApp/settings.py:140 WikiApp/settings_dev.py:134
 msgid "English"
 msgstr "Angielski"
@@ -156,3 +157,4 @@ msgstr "Nowy zasób zewnętrzny"
 #: static/translations/context_processor.py:51
 msgid "Remove resource"
 msgstr "Usuń zasób"
+
