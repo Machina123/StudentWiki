@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'UsersActions.apps.RegistrationConfig',
-    'Files.apps.FilesConfig'
+    'Files.apps.FilesConfig',
+    'resources.apps.ResourcesConfig'
 ]
 
 MIDDLEWARE = [
@@ -79,7 +80,8 @@ TEMPLATES = [
                 'static.translations.context_processor.index',
                 'static.translations.context_processor.files',
                 'static.translations.context_processor.footer',
-                'django.template.context_processors.i18n'
+                'static.translations.context_processor.resources',
+                'django.template.context_processors.i18n',
             ],
         },
     },

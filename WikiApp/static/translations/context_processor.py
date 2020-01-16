@@ -21,7 +21,8 @@ def files(request):
         'details': _('Details'),
         'error': _('Error'),
         'no_files': _('No such files exist'),
-
+        'file_remove': _('Remove file'),
+        'owner': _("Owner")
     }
 
 def footer(request):
@@ -34,3 +35,20 @@ def footer(request):
              fax: (+48 12) 662 78 46\n''',
         'email': 'email: ii@up.krakow.pl',
     }
+
+def resources(request):
+    return {
+        'add_res': _('Add resource'),
+        'res_list': _('Resource list'),
+        'resources': _('External resources'),
+        'new_res': _('Add new resource'),
+        'res_preview': _('Resource preview'),
+        'res_description': _('Resource description'),
+        'res_open': _('Open external resource'),
+        'users_res': _('External resources added by users'),
+        'no_resources': _('No resources available'),
+        'res_creation': _('New external resource'),
+        'res_remove': _('Remove resource'),
+        'res_address': _('Resource address')
+    }
+

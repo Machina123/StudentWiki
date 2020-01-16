@@ -32,6 +32,7 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'files:file_list' %}">{{ file_list }}</a>
         </li>
+          <li class="nav-item"><a href="{% url 'resources:resource_list' %}" class="nav-link">{{ res_list }}</a></li>
         <li class="nav-item">
           <a class="nav-link" href="#">{{ contact }}</a>
         </li>
@@ -51,6 +52,9 @@
 
 <!-- Full Page Image Header with Vertically Centered Content -->
 <header class="masthead">
+      {% block breadcrumbs %}
+          <a href= "/" ><i class="fas fa-home"></i></a>
+      {% endblock %}
   <div class="container h-100">
     <div class="row h-100 align-items-center">
       <div class="col-12 text-center masthead_text">

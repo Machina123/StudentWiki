@@ -1,0 +1,79 @@
+{% extends "index.html" %}
+
+{% block title %}{{ project_name }} | {{ res_list }}{% endblock %}
+
+{% block main_css %}
+    {{ block.super }}
+{% endblock %}
+
+{% block sub_css %}
+    {{ block.super }}
+{% endblock %}
+
+{% block main_head_js %}
+
+{% endblock %}
+
+{% block sub_head_js %}
+{% endblock %}
+
+{% block navigation %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% block breadcrumbs %}
+            {{ block.super }} » {{ resources }}
+        {% endblock %}
+        <div class="row">
+            <div class="col-sm-12 col-md-9">
+                <h2>{{ users_res }}</h2>
+            </div>
+            <div class="col-sm-12 col-md-3">
+                <a href="{% url 'resources:resource_add' %}" class="btn btn-primary" role="button">{{ new_res }}</a>
+            </div>
+        </div>
+
+        <div class="row">
+            {% if object_list %}
+                {% regroup object_list|dictsort:"rsrc_subject.sub_name" by rsrc_subject.sub_name as res_list %}
+                {% for res_group in res_list %}
+                    <h5>{{ res_group.grouper }}</h5>
+                    <table class="table table-hover">
+                        <tbody>
+                        {% for resource_obj in res_group.list %}
+                            <tr>
+                                {% url "resources:resource_detail" resource_obj.resource_id as resource_uri %}
+                                <td>{{ resource_obj.title }}</td>
+                                <td>
+                                    {{ resource_obj.description|truncatechars:50|default:"(no description provided)" }}</td>
+                                <td class="text-right">
+                                    <a href="{{ resource_uri }}" class="btn btn-primary" role="button">
+                                         {{ details }}
+                                    </a>
+                                </td>
+
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                {% endfor %}
+
+            {% else %}
+                <div class="alert alert-danger" role="alert"><strong>{{ error }} </strong>{{ no_resources }}</div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {{ block.super }}
+{% endblock %}
+
+{% block main_foot_js %}
+    {{ block.super }}
+{% endblock %}
+
+{% block sub_foot_js %}
+{% endblock %}

@@ -24,18 +24,20 @@
   {% block content %}
 <div class="container">
   <h1>{{ object.title }}</h1>
-    <p><strong>{{ owner }}</strong>: {{ object.file_owner.username }}</p>
-    <p><strong>{{ file_description }}</strong>: {{ object.description|default:"(not provided)" }}</p>
+    <p><strong>{{ owner }}</strong>: {{ object.rsrc_owner.username }}</p>
+    <p><strong>{{ res_description }}</strong>: {{ object.description|default:"(not provided)" }}</p>
+    <p><strong>{{ res_address }}</strong>: {{ object.resource_uri }}</p>
     <p>
-        <a href="{{ object.file.url }}" class="btn btn-success">
-            <span class="glyphicon glyphicon-floppy-save"></span> {{ download }}
+        <a href="{{ object.resource_uri }}" class="btn btn-success" target="_blank">
+            <i class="fas fa-globe-europe"></i> {{ res_open }}
         </a>
-        {% if object.file_owner == request.user %}
-            {% url "files:file_delete" object.file_id as delete_uri %}
+        {% if object.rsrc_owner == request.user %}
+            {% url "resources:resource_delete" object.resource_id as delete_uri %}
             <a href="delete" class="btn btn-danger">
-                <i class="fas fa-trash"></i> {{ file_remove }}
+                <i class="fas fa-trash"></i> {{ res_remove }}
             </a>
         {% endif %}
+        <br>
     </p>
 </div>
   {% endblock %}
