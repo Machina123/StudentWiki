@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'UsersActions.apps.RegistrationConfig',
     'Files.apps.FilesConfig',
-    'resources.apps.ResourcesConfig'
+    'resources.apps.ResourcesConfig',
+    'consultations.apps.ConsultationsConfig'
 ]
 
 MIDDLEWARE = [
@@ -82,6 +83,7 @@ TEMPLATES = [
                 'translations.context_processor.footer',
                 'translations.context_processor.resources',
                 'django.template.context_processors.i18n',
+                'translations.context_processor.consultations'
             ],
         },
     },

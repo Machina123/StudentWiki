@@ -52,3 +52,15 @@ def resources(request):
         'res_address': _('Resource address')
     }
 
+def consultations(request):
+    return {
+        'lecturer': _("Lecturer"),
+        'hours': _("Hours"),
+        'room': _("Room"),
+        'monday': _("Monday"),
+        'tuesday': _("Tuesday"),
+        'wednesday': _("Wednesday"),
+        'thursday': _("Thursday"),
+        'friday': _("Friday")
+    }
+

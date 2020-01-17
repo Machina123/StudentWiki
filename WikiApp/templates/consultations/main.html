@@ -1,0 +1,70 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block title %}StudentWiki | Harmonogram {% endblock %}
+
+{% block main_css %}
+{{ block.super }}
+{% endblock %}
+
+{% block sub_css %}
+{{ block.super }}
+{% endblock %}
+
+{% block main_head_js %}
+
+{% endblock %}
+
+{% block sub_head_js %}
+{% endblock %}
+
+{% block navigation %}
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
+
+<section id="load_schedule">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>{{lecturer}}</th>
+            <th>{{room}}</th>
+            <th>{{hours}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for w in data %}
+        <tr>
+
+            <td>{{w.wykladowca}}</td>
+            <td>{{w.pokoj}}</td>
+            <td>
+                {% if w.godziny.Poniedzialek != " " %} {{monday}} {{w.godziny.Poniedzialek}} <br> {% endif %}
+                {% if w.godziny.Wtorek != " " %} {{tuesday}} {{w.godziny.Wtorek}} <br> {% endif %}
+                {% if w.godziny.Sroda != " " %} {{wednesday}} {{w.godziny.Sroda}} <br> {% endif %}
+                {% if w.godziny.Czwartek != " " %} {{thursday}} {{w.godziny.Czwartek}} <br> {% endif %}
+                {% if w.godziny.Piatek != " " %} {{friday}} {{w.godziny.Piatek}} {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}
+
+{% block footer %}
+{{ block.super }}
+{% endblock %}
+
+{% block body_block %}
+
+{% endblock %}
+
+{% block main_foot_js %}
+{{ block.super }}
+{% endblock %}
+
+{% block sub_foot_js %}
+{% endblock %}

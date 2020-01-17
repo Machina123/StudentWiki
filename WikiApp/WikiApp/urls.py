@@ -31,5 +31,6 @@ urlpatterns += i18n_patterns(
     path('user/', include('UsersActions.urls')),
     path('files/', include('Files.urls')),
     path('schedule/', include('schedule.urls')),
-    path('resources/', include('resources.urls', namespace="resources"))
+    path('resources/', include('resources.urls', namespace="resources")),
+    path('consultations/', include('consultations.urls'))
 )
