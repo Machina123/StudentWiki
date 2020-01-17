@@ -1,0 +1,94 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block title %}StudentWiki | Harmonogram {% endblock %}
+
+{% block main_css %}
+{{ block.super }}
+{% endblock %}
+
+{% block sub_css %}
+{{ block.super }}
+{% endblock %}
+
+{% block main_head_js %}
+
+{% endblock %}
+
+{% block sub_head_js %}
+{% endblock %}
+
+  {% block navigation %}
+ {{ block.super }}
+  {% endblock %}
+
+  {% block content %}
+<nav>
+    <form method="post" action="{% url 'schedule:schedule' %}" id="main_schedule_form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Wyślij</button>
+    </form>
+</nav>
+<section id="load_schedule">
+    <table>
+        <tr>
+            <td>Nazwa Przedmiotu</td>
+            <td>Prowadzący</td>
+            <td>Data</td>
+            <td>Dzien</td>
+            <td>Poczatek</td>
+            <td>Koniec</td>
+            <td>Sala</td>
+            <td>Forma Zajęć</td>
+            <td>Semestr</td>
+            <td>Forma Studiów</td>
+            <td>Stopien</td>
+            <td>Grupa</td>
+</section>
+ {% block javascript %}
+  <script>
+        $.ajax({
+        url: 'json_request/',
+        type: 'GET',
+        dataType: 'json',
+        success: function (data, status, xhr) {
+            data_string = '';
+            for(var i = 0; i < data.length; i++){
+                data_string += "<tr>"
+                data_string +="<td>"+data[i].nazwaPrzedmiotu+"</td>"
+                data_string +="<td>"+data[i].prowadzacy+"</td>"
+                data_string +="<td>"+data[i].data+"</td>"
+                data_string +="<td>"+data[i].dzien+"</td>"
+                data_string +="<td>"+data[i].poczatek+"</td>"
+                data_string +="<td>"+data[i].koniec+"</td>"
+                data_string +="<td>"+data[i].sala+"</td>"
+                data_string +="<td>"+data[i].forma+"</td>"
+                data_string +="<td>"+data[i].semestr+"</td>"
+                data_string +="<td>"+data[i].formaStudiow+"</td>"
+                data_string +="<td>"+data[i].stopien+"</td>"
+                data_string +="<td>"+data[i].grupa+"</td>"
+                data_string += "</tr>"
+            }
+            $("#load_schedule").append(data_string+"</tr></table>");
+        }
+        })
+  </script>
+    {% endblock %}
+  {% endblock %}
+
+  {% block footer %}
+{{ block.super }}
+  {% endblock %}
+
+{% block body_block %}
+
+{% endblock %}
+
+{% block main_foot_js %}
+{{ block.super }}
+{% endblock %}
+
+{% block sub_foot_js %}
+{% endblock %}
