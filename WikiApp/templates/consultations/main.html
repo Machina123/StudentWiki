@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %}StudentWiki | Konsultacje {% endblock %}
+{% block title %}{{ project_name }} | {{ consultations }} {% endblock %}
 
 {% block main_css %}
 {{ block.super }}
@@ -35,16 +35,15 @@
               <div class="row h-100 align-items-center">
                   <div class="col-md-12">
                       <div class="page-header-title">
-                          <h5 class="m-b-10">{{ res_creation }}</h5>
+                          <h5 class="m-b-10">{{ consultations }}</h5>
                       </div>
                       <ul class="breadcrumb">
                           {% block breadcrumbs %}
                               {{ block.super }}
                               <li class="breadcrumb-item">
-                                  <a href="{% url 'resources:resource_list' %}"> {{ resources }} </a>
+                                  <span> {{ consultations }} </span>
                               </li>
                           {% endblock %}
-                          <li class="breadcrumb-item">{{ new_res }}</li>
                       </ul>
                   </div>
                   <div class="main-body">
@@ -52,11 +51,6 @@
                           <div class="row">
                               <div class="col-12">
                                     <div class="card">
-                                        <div class="card-header">
-                                            <h5 class="card-title">
-                                                {{ new_res }}
-                                            </h5>
-                                        </div>
                                         <div class="card-body">
                                             <section id="load_schedule">
                                             <table class="table table-hover">

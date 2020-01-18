@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-18 13:43+0100\n"
+"POT-Creation-Date: 2020-01-18 14:56+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr "Przedmiot"
 msgid "Title"
 msgstr "Tytuł"
 
-#: .\Files\models.py:18 .\translations\context_processor.py:29
+#: .\Files\models.py:18 .\translations\context_processor.py:31
 msgid "Description"
 msgstr "Opis pliku"
 
@@ -45,11 +45,11 @@ msgstr "Angielski"
 msgid "Polish"
 msgstr "Polski"
 
-#: .\resources\models.py:22 .\translations\context_processor.py:53
+#: .\resources\models.py:22 .\translations\context_processor.py:55
 msgid "Resource description"
 msgstr "Opis zasobu"
 
-#: .\resources\models.py:23 .\translations\context_processor.py:59
+#: .\resources\models.py:23 .\translations\context_processor.py:61
 msgid "Resource address"
 msgstr "Adres zasobu"
 
@@ -57,23 +57,23 @@ msgstr "Adres zasobu"
 msgid "A whole week"
 msgstr "Cały tydzień"
 
-#: .\schedule\form_choises.py:11 .\translations\context_processor.py:68
+#: .\schedule\form_choises.py:11 .\translations\context_processor.py:70
 msgid "Monday"
 msgstr "Poniedziałek"
 
-#: .\schedule\form_choises.py:12 .\translations\context_processor.py:69
+#: .\schedule\form_choises.py:12 .\translations\context_processor.py:71
 msgid "Tuesday"
 msgstr "Wtorek"
 
-#: .\schedule\form_choises.py:13 .\translations\context_processor.py:70
+#: .\schedule\form_choises.py:13 .\translations\context_processor.py:72
 msgid "Wednesday"
 msgstr "Środa"
 
-#: .\schedule\form_choises.py:14 .\translations\context_processor.py:71
+#: .\schedule\form_choises.py:14 .\translations\context_processor.py:73
 msgid "Thursday"
 msgstr "Czwartek"
 
-#: .\schedule\form_choises.py:15 .\translations\context_processor.py:72
+#: .\schedule\form_choises.py:15 .\translations\context_processor.py:74
 msgid "Friday"
 msgstr "Piątek"
 
@@ -123,174 +123,182 @@ msgstr "Wyniki wyszukiwania"
 msgid "Searching for"
 msgstr "Wyszukiwanie dla hasła"
 
-#: .\translations\context_processor.py:15
+#: .\translations\context_processor.py:11
+msgid "Schedule"
+msgstr "Harmonogram"
+
+#: .\translations\context_processor.py:12
+msgid "Consultations"
+msgstr "Konsultacje"
+
+#: .\translations\context_processor.py:17
 msgid "Upload file"
 msgstr "Dodaj plik"
 
-#: .\translations\context_processor.py:16
+#: .\translations\context_processor.py:18
 msgid "File list"
 msgstr "Lista plików"
 
-#: .\translations\context_processor.py:17
+#: .\translations\context_processor.py:19
 msgid "Uploaded files"
 msgstr "Dodane pliki"
 
-#: .\translations\context_processor.py:18
+#: .\translations\context_processor.py:20
 msgid "Upload new file"
 msgstr "Dodaj nowy plik"
 
-#: .\translations\context_processor.py:19
+#: .\translations\context_processor.py:21
 msgid "File preview"
 msgstr "Podgląd"
 
-#: .\translations\context_processor.py:20
+#: .\translations\context_processor.py:22
 msgid "File description"
 msgstr "Opis pliku"
 
-#: .\translations\context_processor.py:21
+#: .\translations\context_processor.py:23
 msgid "Download"
 msgstr "Pobierz"
 
-#: .\translations\context_processor.py:22
+#: .\translations\context_processor.py:24
 msgid "Upload"
 msgstr "Dodaj plik"
 
-#: .\translations\context_processor.py:23
+#: .\translations\context_processor.py:25
 msgid "Files added by users"
 msgstr "Pliki dodane przez użytkowników"
 
-#: .\translations\context_processor.py:24
+#: .\translations\context_processor.py:26
 msgid "Details"
 msgstr "Szczegóły"
 
-#: .\translations\context_processor.py:25
+#: .\translations\context_processor.py:27
 msgid "Error"
 msgstr "Błąd"
 
-#: .\translations\context_processor.py:26
+#: .\translations\context_processor.py:28
 msgid "No such files exist"
 msgstr "Brak plików"
 
-#: .\translations\context_processor.py:27
+#: .\translations\context_processor.py:29
 msgid "Remove file"
 msgstr "Usuń plik"
 
-#: .\translations\context_processor.py:28
+#: .\translations\context_processor.py:30
 msgid "Owner"
 msgstr "Właściciel"
 
-#: .\translations\context_processor.py:30
+#: .\translations\context_processor.py:32
 msgid "File name"
 msgstr "Nazwa pliku"
 
-#: .\translations\context_processor.py:31
+#: .\translations\context_processor.py:33
 msgid "Course"
 msgstr "Nazwa kursu"
 
-#: .\translations\context_processor.py:32
+#: .\translations\context_processor.py:34
 msgid "Select file"
 msgstr "Wybierz plik"
 
-#: .\translations\context_processor.py:48
+#: .\translations\context_processor.py:50
 msgid "Add resource"
 msgstr "Dodaj zasób"
 
-#: .\translations\context_processor.py:49
+#: .\translations\context_processor.py:51
 msgid "Resource list"
 msgstr "Lista zasobów"
 
-#: .\translations\context_processor.py:50
+#: .\translations\context_processor.py:52
 msgid "External resources"
 msgstr "Zasoby zewnętrzne"
 
-#: .\translations\context_processor.py:51
+#: .\translations\context_processor.py:53
 msgid "Add new resource"
 msgstr "Dodaj nowy zasób"
 
-#: .\translations\context_processor.py:52
+#: .\translations\context_processor.py:54
 msgid "Resource preview"
 msgstr "Podgląd zasobu"
 
-#: .\translations\context_processor.py:54
+#: .\translations\context_processor.py:56
 msgid "Open external resource"
 msgstr "Przejdź do zasobu zewnętrznego"
 
-#: .\translations\context_processor.py:55
+#: .\translations\context_processor.py:57
 msgid "External resources added by users"
 msgstr "Zasoby zewnętrzne dodane przez użytkowników"
 
-#: .\translations\context_processor.py:56
+#: .\translations\context_processor.py:58
 msgid "No resources available"
 msgstr "Brak dostępnych zasobów"
 
-#: .\translations\context_processor.py:57
+#: .\translations\context_processor.py:59
 msgid "New external resource"
 msgstr "Nowy zasób zewnętrzny"
 
-#: .\translations\context_processor.py:58
+#: .\translations\context_processor.py:60
 msgid "Remove resource"
 msgstr "Usuń zasób"
 
-#: .\translations\context_processor.py:60
+#: .\translations\context_processor.py:62
 msgid "Resource name"
 msgstr "Nazwa zasobu"
 
-#: .\translations\context_processor.py:65
+#: .\translations\context_processor.py:67
 msgid "Lecturer"
 msgstr "Wykładowca"
 
-#: .\translations\context_processor.py:66
+#: .\translations\context_processor.py:68
 msgid "Hours"
 msgstr "Godziny"
 
-#: .\translations\context_processor.py:67
+#: .\translations\context_processor.py:69
 msgid "Room"
 msgstr "Pokój"
 
-#: .\translations\context_processor.py:73
+#: .\translations\context_processor.py:75
 msgid "Day of the week"
 msgstr "Dzień tygodnia"
 
-#: .\translations\context_processor.py:74
+#: .\translations\context_processor.py:76
 msgid "Type of studies"
 msgstr "Rodzaj studiów"
 
-#: .\translations\context_processor.py:75
+#: .\translations\context_processor.py:77
 msgid "Semester"
 msgstr "Semestr"
 
-#: .\translations\context_processor.py:76
+#: .\translations\context_processor.py:78
 msgid "Speciality"
 msgstr "Specjalność"
 
-#: .\translations\context_processor.py:77
+#: .\translations\context_processor.py:79
 msgid "The name of subject"
 msgstr "Nazwa przedmiotu"
 
-#: .\translations\context_processor.py:78
+#: .\translations\context_processor.py:80
 msgid "Teacher"
 msgstr "Prowadzący"
 
-#: .\translations\context_processor.py:79
+#: .\translations\context_processor.py:81
 msgid "Date"
 msgstr "Data"
 
-#: .\translations\context_processor.py:80
+#: .\translations\context_processor.py:82
 msgid "Start time"
 msgstr "Początek"
 
-#: .\translations\context_processor.py:81
+#: .\translations\context_processor.py:83
 msgid "End time"
 msgstr "Koniec"
 
-#: .\translations\context_processor.py:82
+#: .\translations\context_processor.py:84
 msgid "Classroom"
 msgstr "Sala"
 
-#: .\translations\context_processor.py:83
+#: .\translations\context_processor.py:85
 msgid "Class form"
 msgstr "Rodzaj zajęć"
 
-#: .\translations\context_processor.py:84
+#: .\translations\context_processor.py:86
 msgid "Group"
 msgstr "Grupa"

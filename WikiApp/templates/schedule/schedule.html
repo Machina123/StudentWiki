@@ -38,10 +38,9 @@
                           {% block breadcrumbs %}
                               {{ block.super }}
                               <li class="breadcrumb-item">
-                                  <a href="{% url 'resources:resource_list' %}"> {{ resources }} </a>
+                                  <span> {{ schedule }} </span>
                               </li>
                           {% endblock %}
-                          <li class="breadcrumb-item">{{ new_res }}</li>
                       </ul>
                   </div>
                   <div class="main-body">

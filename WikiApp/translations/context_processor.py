@@ -8,6 +8,8 @@ def index(request):
         'search': _("Searching"),
         'search_results': _("Search result"),
         'searching_for': _('Searching for'),
+        'schedule': _('Schedule'),
+        'consultations': _("Consultations"),
     }
 
 def files(request):

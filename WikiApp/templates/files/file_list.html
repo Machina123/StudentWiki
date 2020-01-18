@@ -36,7 +36,7 @@
                           {% block breadcrumbs %}
                               {{ block.super }}
                               <li class="breadcrumb-item">
-                                  <a href="{% url 'files:file_list' %}"> {{ files }} </a>
+                                  <span> {{ files }} </span>
                               </li>
                           {% endblock %}
                       </ul>
