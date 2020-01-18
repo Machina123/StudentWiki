@@ -16,6 +16,9 @@ class Subject(models.Model):
     def __str__(self):
         return self.sub_name
 
+    class Meta:
+        ordering = ["sub_name"]
+
 class ExternalResource(models.Model):
     resource_id = models.CharField(max_length=6, editable=False, primary_key=True, default=generate_id)
     title = models.CharField(max_length=255, verbose_name=_("Title"))

@@ -48,8 +48,8 @@ INSTALLED_APPS = [
     'Files.apps.FilesConfig',
     'resources.apps.ResourcesConfig',
     'consultations.apps.ConsultationsConfig',
-    'schedule.apps.ScheduleConfig'
-
+    'schedule.apps.ScheduleConfig',
+    'courses.apps.CoursesConfig'
 ]
 
 MIDDLEWARE = [
@@ -85,7 +85,8 @@ TEMPLATES = [
                 'translations.context_processor.footer',
                 'translations.context_processor.resources',
                 'django.template.context_processors.i18n',
-                'translations.context_processor.consultations'
+                'translations.context_processor.consultations',
+                'translations.context_processor.courses'
             ],
         },
     },

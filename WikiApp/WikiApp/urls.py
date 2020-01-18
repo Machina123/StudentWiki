@@ -34,6 +34,6 @@ urlpatterns += i18n_patterns(
     path('schedule/', include('schedule.urls')),
     path('resources/', include('resources.urls', namespace="resources")),
     path('consultations/', include('consultations.urls')),
-    path('search/', views.SearchResultsView.as_view(), name='search_results')
-
+    path('search/', views.SearchResultsView.as_view(), name='search_results'),
+    path('courses/', include('courses.urls', namespace="courses"))
 )

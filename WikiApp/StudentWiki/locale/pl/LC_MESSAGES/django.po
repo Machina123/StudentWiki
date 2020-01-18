@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-18 14:56+0100\n"
+"POT-Creation-Date: 2020-01-18 22:32+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,11 +21,11 @@ msgstr ""
 "%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: .\Files\forms.py:10 .\Files\models.py:21 .\resources\forms.py:6
-#: .\resources\models.py:14 .\resources\models.py:24
+#: .\resources\models.py:14 .\resources\models.py:27
 msgid "Subject"
 msgstr "Przedmiot"
 
-#: .\Files\models.py:17 .\resources\models.py:21
+#: .\Files\models.py:17 .\resources\models.py:24
 msgid "Title"
 msgstr "Tytuł"
 
@@ -37,19 +37,19 @@ msgstr "Opis pliku"
 msgid "File"
 msgstr "Plik"
 
-#: .\WikiApp\settings.py:145
+#: .\WikiApp\settings.py:146 .\WikiApp\settings_dev.py:146
 msgid "English"
 msgstr "Angielski"
 
-#: .\WikiApp\settings.py:146
+#: .\WikiApp\settings.py:147 .\WikiApp\settings_dev.py:147
 msgid "Polish"
 msgstr "Polski"
 
-#: .\resources\models.py:22 .\translations\context_processor.py:55
+#: .\resources\models.py:25 .\translations\context_processor.py:55
 msgid "Resource description"
 msgstr "Opis zasobu"
 
-#: .\resources\models.py:23 .\translations\context_processor.py:61
+#: .\resources\models.py:26 .\translations\context_processor.py:61
 msgid "Resource address"
 msgstr "Adres zasobu"
 
@@ -184,8 +184,8 @@ msgid "Remove file"
 msgstr "Usuń plik"
 
 #: .\translations\context_processor.py:30
-msgid "Owner"
-msgstr "Właściciel"
+msgid "Added by"
+msgstr "Dodany przez"
 
 #: .\translations\context_processor.py:32
 msgid "File name"
@@ -302,3 +302,31 @@ msgstr "Rodzaj zajęć"
 #: .\translations\context_processor.py:86
 msgid "Group"
 msgstr "Grupa"
+
+#: .\translations\context_processor.py:91
+msgid "Courses"
+msgstr "Kursy"
+
+#: .\translations\context_processor.py:92
+msgid "Course list"
+msgstr "Lista kursów"
+
+#: .\translations\context_processor.py:93
+msgid "Course detail"
+msgstr "Szczegóły kursu"
+
+#: .\translations\context_processor.py:94
+msgid "Available courses"
+msgstr "Dostępne kursy"
+
+#: .\translations\context_processor.py:95
+msgid "Files associated with course"
+msgstr "Pliki powiązane z kursem"
+
+#: .\translations\context_processor.py:96
+msgid "External resources associated with course"
+msgstr "Zasoby zewnętrzne powiązane z kursem"
+
+#: .\translations\context_processor.py:97
+msgid "No courses available"
+msgstr "Brak dostępnych kursów"

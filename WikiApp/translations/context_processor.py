@@ -27,7 +27,7 @@ def files(request):
         'error': _('Error'),
         'no_files': _('No such files exist'),
         'file_remove': _('Remove file'),
-        'owner': _('Owner'),
+        'owner': _('Added by'),
         'description': _("Description"),
         'file_name': _('File name'),
         'course': _('Course'),
@@ -86,3 +86,13 @@ def consultations(request):
         'group': _('Group'),
     }
 
+def courses(request):
+    return {
+        'lbl_courses': _('Courses'),
+        'lbl_course_list': _('Course list'),
+        'lbl_course_detail': _('Course detail'),
+        'available_courses': _('Available courses'),
+        'associated_files': _('Files associated with course'),
+        'associated_resources': _('External resources associated with course'),
+        'err_no_courses': _('No courses available')
+    }
