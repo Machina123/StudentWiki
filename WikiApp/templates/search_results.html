@@ -1,6 +1,6 @@
 {% extends "index.html" %}
 
-{% block title %}{{ project_name }} | Wyszukiwanie {% endblock %}
+{% block title %}{{ project_name }} | {{ search }} {% endblock %}
 
 {% block main_css %}
     {{ block.super }}
@@ -30,7 +30,7 @@
               <div class="row h-100 align-items-center">
                   <div class="col-md-12">
                       <div class="page-header-title">
-                          <h5 class="m-b-10">Wynik wyszukiwania</h5>
+                          <h5 class="m-b-10">{{ search_result }}</h5>
                       </div>
                       <ul class="breadcrumb">
                           {% block breadcrumbs %}
@@ -45,7 +45,7 @@
                                     <div class="card">
                                         <div class="card-header">
                                             <h5 class="card-title">
-                                              Wyszukiwania dla hasła :  <span class="search-query">{{ object_list.query }}</span>
+                                              {{ searching_for }} :  <span class="search-query">{{ object_list.query }}</span>
                                             </h5>
                                         </div>
 
@@ -62,7 +62,7 @@
                                           {% endif %}
                                            {% if object_list.q2 %}
                                           <ul class="search-category-list">
-                                            <span class="search-category-title">Zasoby</span>
+                                            <span class="search-category-title">{{ resources }}</span>
                                             {% for object in object_list.q2 %}
                                             <li class="search-category-item">{{ object.title }}</li>
                                             {% endfor %}
@@ -71,7 +71,7 @@
                                           {% endif %}
                                            {% if object_list.q3 %}
                                           <ul class="search-category-list">
-                                            <span class="search-category-title">Kursy</span>
+                                            <span class="search-category-title">{{ courses }}</span>
                                             {% for object in object_list.q3 %}
                                             <li class="search-category-item">{{ object.sub_name }}</li>
                                             {% endfor %}

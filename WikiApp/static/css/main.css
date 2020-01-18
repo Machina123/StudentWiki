@@ -201,5 +201,9 @@ body {
 }
 
 .custom-file-input:lang(en)~.custom-file-label::after {
+    content: "Select";
+}
+
+.custom-file-input:lang(pl)~.custom-file-label::after {
     content: "Wybierz";
 }

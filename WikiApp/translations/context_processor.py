@@ -5,6 +5,9 @@ def index(request):
         'project_name': 'StudentWiki',
         'logout': _('Logout'),
         'contact': _('Contact'),
+        'search': _("Searching"),
+        'search_results': _("Search result"),
+        'searching_for': _('Searching for'),
     }
 
 def files(request):
@@ -16,13 +19,17 @@ def files(request):
         'file_preview': _('File preview'),
         'file_description': _('File description'),
         'download': _('Download'),
-        'file_upload': _("Upload"),
+        'file_upload': _('Upload'),
         'users_file': _('Files added by users'),
         'details': _('Details'),
         'error': _('Error'),
         'no_files': _('No such files exist'),
         'file_remove': _('Remove file'),
-        'owner': _("Owner")
+        'owner': _('Owner'),
+        'description': _("Description"),
+        'file_name': _('File name'),
+        'course': _('Course'),
+        'select_file': _('Select file'),
     }
 
 def footer(request):
@@ -49,7 +56,8 @@ def resources(request):
         'no_resources': _('No resources available'),
         'res_creation': _('New external resource'),
         'res_remove': _('Remove resource'),
-        'res_address': _('Resource address')
+        'res_address': _('Resource address'),
+        'res_name': _('Resource name'),
     }
 
 def consultations(request):
@@ -61,6 +69,18 @@ def consultations(request):
         'tuesday': _("Tuesday"),
         'wednesday': _("Wednesday"),
         'thursday': _("Thursday"),
-        'friday': _("Friday")
+        'friday': _("Friday"),
+        'day_of_the_week': _('Day of the week'),
+        'type_of_studies': _('Type of studies'),
+        'semester': _('Semester'),
+        'speciality': _('Speciality'),
+        'subject_name': _('The name of subject'),
+        'teacher': _('Teacher'),
+        'date': _('Date'),
+        'start': _('Start time'),
+        'end': _('End time'),
+        'class': _('Classroom'),
+        'class_form': _('Class form'),
+        'group': _('Group'),
     }
 

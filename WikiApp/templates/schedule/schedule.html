@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %}StudentWiki | Harmonogram {% endblock %}
+{% block title %}{{ project_name }} | {{ schedule }} {% endblock %}
 
 {% block main_css %}
 {{ block.super }}
@@ -60,34 +60,34 @@
                                              <div class="row">
                                                  <div class="col-12 col-sm-6 col-md-4">
                                                      <div class="form-group">
-                                                         <label for="id_date">Dzień tygodnia</label>
+                                                         <label for="id_date">{{ day_of_the_week}}</label>
                                                          {{ form.date }}
                                                      </div>
                                                  </div>
 
                                                   <div class="col-12 col-sm-6 col-md-4">
                                                      <div class="form-group">
-                                                          <label for="id_collageForm">Rodzaj studiów</label>
+                                                          <label for="id_collageForm">{{ class_form }}</label>
                                                          {{ form.collageForm }}
                                                      </div>
                                                  </div>
                                                   <div class="col-12 col-sm-6 col-md-4">
                                                      <div class="form-group">
-                                                          <label for="id_degree">Stopień studiów</label>
+                                                          <label for="id_degree">{{ type_of_studies }}</label>
                                                          {{ form.degree }}
                                                      </div>
                                                  </div>
 
                                                  <div class="col-12 col-sm-6 col-md-4">
                                                      <div class="form-group">
-                                                          <label for="id_year">Semestr studiów</label>
+                                                          <label for="id_year"> {{ semester }}</label>
                                                          {{ form.year }}
                                                      </div>
                                                  </div>
 
                                                  <div class="col-12 col-sm-12 col-md-8">
                                                      <div class="form-group">
-                                                          <label for="id_speciality">Specjalność</label>
+                                                          <label for="id_speciality">{{ speciality }}</label>
                                                          {{ form.speciality }}
                                                      </div>
                                                  </div>
@@ -99,18 +99,18 @@
                                             <div class="schedule-container table-responsive" id="schedule-container">
                                             <table class="table table-striped schedule-table" id="schedule_table">
                                                 <tr class="schedule-table-header-row">
-                                                    <th scope="col" class="schedule-header-title">Nazwa Przedmiotu</th>
-                                                    <th scope="col" class="schedule-header-title">Prowadzący</th>
-                                                    <th scope="col" class="schedule-header-title">Data</th>
+                                                    <th scope="col" class="schedule-header-title">{{ subject_name }}</th>
+                                                    <th scope="col" class="schedule-header-title">{{ teacher }}</th>
+                                                    <th scope="col" class="schedule-header-title">{{ date }}</th>
 <!--                                                    <th scope="col" class="schedule-header-title">Dzien</th>-->
-                                                    <th scope="col" class="schedule-header-title">Poczatek</th>
-                                                    <th scope="col" class="schedule-header-title">Koniec</th>
-                                                    <th scope="col" class="schedule-header-title">Sala</th>
-                                                    <th scope="col" class="schedule-header-title">Forma Zajęć</th>
+                                                    <th scope="col" class="schedule-header-title">{{ start }}</th>
+                                                    <th scope="col" class="schedule-header-title">{{ end }}</th>
+                                                    <th scope="col" class="schedule-header-title">{{ class }}</th>
+                                                    <th scope="col" class="schedule-header-title">{{ class_form }}</th>
 <!--                                                    <td class="schedule-header-title">Semestr</td>-->
 <!--                                                    <td class="schedule-header-title">Forma Studiów</td>-->
 <!--                                                    <td class="schedule-header-title">Stopien</td>-->
-                                                    <th scope="col" class="schedule-header-title"> Grupa</th>
+                                                    <th scope="col" class="schedule-header-title"> {{ group }}</th>
                                                 </tr>
                                             </table>
                                         </div>

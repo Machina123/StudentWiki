@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %}StudentWiki | Dodaj plik {% endblock %}
+{% block title %}{{ project_name }} | {{ upload_file }} {% endblock %}
 
 {% block main_css %}
 {{ block.super }}
@@ -39,7 +39,7 @@
                           {% block breadcrumbs %}
                               {{ block.super }}
                               <li class="breadcrumb-item">
-                                  <a href="{% url 'resources:resource_list' %}"> {{ resources }} </a>
+                                  <a href="{% url 'files:file_list' %}"> {{ files }} </a>
                               </li>
                           {% endblock %}
                       </ul>
@@ -60,7 +60,7 @@
                                                 <div class="row">
                                                          <div class="col-sm-12">
                                                      <div class="form-group">
-                                                         <label for="id_file_subject">Kurs</label>
+                                                         <label for="id_file_subject">{{ course }}</label>
                                                          {{ form.file_subject }}
                                                      </div>
                                                  </div>
@@ -68,7 +68,7 @@
 
                                                  <div class="col-sm-12">
                                                      <div class="form-group">
-                                                         <label for="id_title">Nazwa pliku</label>
+                                                         <label for="id_title">{{ file_name }}</label>
                                                          {{ form.title }}
                                                      </div>
                                                  </div>
@@ -77,14 +77,14 @@
                                                     <div class="col-sm-12">
                                                      <div class="custom-file">
                                                          {{ form.file }}
-                                                         <label class="custom-file-label" for="id_file">Wybierz plik</label>
+                                                         <label class="custom-file-label" for="id_file">{{ select_file }}</label>
                                                      </div>
 
                                                  </div>
 
                                                        <div class="col-sm-12">
                                                      <div class="form-group">
-                                                         <label for="id_description" style="margin-top:.5rem;">Opis pliku</label>
+                                                         <label for="id_description" style="margin-top:.5rem;">{{ file_description }}</label>
                                                          {{ form.description }}
                                                      </div>
                                                  </div>

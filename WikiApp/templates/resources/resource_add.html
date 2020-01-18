@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %}StudentWiki | Dodaj plik {% endblock %}
+{% block title %} {{ project_name }} | {{ add_file }} {% endblock %}
 
 {% block main_css %}
 {{ block.super }}
@@ -62,7 +62,7 @@
                                                 <div class="row">
                                                          <div class="col-sm-12">
                                                      <div class="form-group">
-                                                         <label for="id_rsrc_subject">Kurs</label>
+                                                         <label for="id_rsrc_subject">{{ course }}</label>
                                                          {{ form.rsrc_subject }}
                                                      </div>
                                                  </div>
@@ -70,7 +70,7 @@
 
                                                  <div class="col-sm-12">
                                                      <div class="form-group">
-                                                         <label for="id_title">Nazwa pliku</label>
+                                                         <label for="id_title">{{ res_name }}</label>
                                                          {{ form.title }}
                                                      </div>
                                                  </div>
@@ -78,7 +78,7 @@
 
                                                     <div class="col-sm-12">
                                                      <div class="form-group">
-                                                         <label for="id_resource_uri">Adres zasobu</label>
+                                                         <label for="id_resource_uri">{{ res_address }}</label>
                                                          {{ form.resource_uri }}
                                                      </div>
 
@@ -86,7 +86,7 @@
 
                                                        <div class="col-sm-12">
                                                      <div class="form-group">
-                                                         <label for="id_description">Opis zasobu</label>
+                                                         <label for="id_description">{{ res_description }}</label>
                                                          {{ form.description }}
                                                      </div>
                                                  </div>
