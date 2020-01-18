@@ -42,6 +42,13 @@
             <span class="sr-only">(current)</span>
             </a>
         </li>
+ <li class="nav-item">
+{% ifequal LANGUAGE_CODE "en" %}
+    <a class="nav-link" href="/pl{{ request.get_full_path |slice:'3:' }}">Polski</a>
+{% else %}
+    <a class="nav-link" href="/en{{ request.get_full_path |slice:'3:' }}">English</a>
+{% endifequal %}
+      </li>
       </ul>
     </div>
   </div>
