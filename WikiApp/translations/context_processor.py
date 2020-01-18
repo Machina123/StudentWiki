@@ -27,11 +27,12 @@ def files(request):
         'error': _('Error'),
         'no_files': _('No such files exist'),
         'file_remove': _('Remove file'),
-        'owner': _('Owner'),
+        'owner': _('Added by'),
         'description': _("Description"),
         'file_name': _('File name'),
         'course': _('Course'),
         'select_file': _('Select file'),
+        'file_details': _("File details"),
     }
 
 def footer(request):
@@ -60,6 +61,7 @@ def resources(request):
         'res_remove': _('Remove resource'),
         'res_address': _('Resource address'),
         'res_name': _('Resource name'),
+        'res_details': _('Resource details')
     }
 
 def consultations(request):

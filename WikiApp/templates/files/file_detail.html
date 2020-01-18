@@ -30,16 +30,16 @@
               <div class="row h-100 align-items-center">
                   <div class="col-md-12">
                       <div class="page-header-title">
-                          <h5 class="m-b-10">{{ res_creation }}</h5>
+                          <h5 class="m-b-10">{{ details }}</h5>
                       </div>
                       <ul class="breadcrumb">
                           {% block breadcrumbs %}
                               {{ block.super }}
                               <li class="breadcrumb-item">
-                                  <a href="{% url 'resources:resource_list' %}"> {{ resources }} </a>
+                                  <a href="{% url 'files:file_list' %}"> {{ file_list }} </a>
                               </li>
                           {% endblock %}
-                          <li class="breadcrumb-item">{{ new_res }}</li>
+                          <li class="breadcrumb-item">{{ details }}</li>
                       </ul>
                   </div>
                   <div class="main-body">
@@ -49,7 +49,7 @@
                                     <div class="card">
                                         <div class="card-header">
                                             <h5 class="card-title">
-                                                {{ new_res }}
+                                                {{ file_details }}
                                             </h5>
                                         </div>
                                         <div class="card-body">
