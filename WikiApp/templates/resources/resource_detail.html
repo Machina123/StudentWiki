@@ -53,11 +53,16 @@
                                             </h5>
                                         </div>
                                         <div class="card-body">
-                                            <p><strong>{{ owner }}</strong>: {{ object.rsrc_owner.username }}</p>
-                                            <p><strong>{{ res_description }}</strong>: {{ object.description|default:"(not provided)" }}</p>
-                                            <p><strong>{{ res_address }}</strong>: {{ object.resource_uri }}</p>
-                                            <p>
-                                                <a href="{{ object.resource_uri }}" class="btn btn-success" target="_blank">
+                                               <div class="card-body">
+                                            <div class="card text-center">
+                                              <div class="card-header">
+                                                {{ object.rsrc_subject.sub_name}}
+                                              </div>
+                                              <div class="card-body">
+                                                <h5 class="card-title"> {{ object.title }} </h5>
+                                                <p class="card-text">{{ object.description|default:"(not provided)" }}</p>
+                                                  <p class="card-text">{{ res_address }} : {{ object.resource_uri }}</p>
+                                                   <a href="{{ object.resource_uri }}" class="btn btn-success" target="_blank">
                                                     <i class="fas fa-globe-europe"></i> {{ res_open }}
                                                 </a>
                                                 {% if object.rsrc_owner == request.user %}
@@ -66,8 +71,13 @@
                                                         <i class="fas fa-trash"></i> {{ res_remove }}
                                                     </a>
                                                 {% endif %}
-                                                <br>
-                                            </p>
+                                              </div>
+                                              <div class="card-footer text-muted">
+                                                {{ owner }} : {{ object.rsrc_owner.username }}
+                                              </div>
+                                            </div>
+                                        </div>
+
                                         </div>
                                     </div>
                               </div>

@@ -13,7 +13,6 @@
 {% endblock %}
 
 {% block main_head_js %}
-
 {% endblock %}
 
 {% block sub_head_js %}
@@ -24,56 +23,206 @@
   {% endblock %}
 
   {% block content %}
-<nav>
-    <form method="post" action="{% url 'schedule:schedule' %}" id="main_schedule_form">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Wyślij</button>
-    </form>
-</nav>
-<section id="load_schedule">
-    <table>
-        <tr>
-            <td>Nazwa Przedmiotu</td>
-            <td>Prowadzący</td>
-            <td>Data</td>
-            <td>Dzien</td>
-            <td>Poczatek</td>
-            <td>Koniec</td>
-            <td>Sala</td>
-            <td>Forma Zajęć</td>
-            <td>Semestr</td>
-            <td>Forma Studiów</td>
-            <td>Stopien</td>
-            <td>Grupa</td>
+
+<section class="page-main-container bg-light">
+    <div class="page-content">
+  <div class="page-inner-content container h-100">
+      <div class="page-header">
+          <div class="page-block">
+              <div class="row h-100 align-items-center">
+                  <div class="col-md-12">
+                      <div class="page-header-title">
+                          <h5 class="m-b-10">{{ res_creation }}</h5>
+                      </div>
+                      <ul class="breadcrumb">
+                          {% block breadcrumbs %}
+                              {{ block.super }}
+                              <li class="breadcrumb-item">
+                                  <a href="{% url 'resources:resource_list' %}"> {{ resources }} </a>
+                              </li>
+                          {% endblock %}
+                          <li class="breadcrumb-item">{{ new_res }}</li>
+                      </ul>
+                  </div>
+                  <div class="main-body">
+                      <div class="page-wrapper">
+                          <div class="row">
+                              <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5 class="card-title">
+                                                {{ object.title }}
+                                            </h5>
+                                        </div>
+                                        <div class="card-body">
+                                         <form method="post" action="{% url 'schedule:schedule' %}" id="main_schedule_form">
+                                            {% csrf_token %}
+                                             <div class="row">
+                                                 <div class="col-12 col-sm-6 col-md-4">
+                                                     <div class="form-group">
+                                                         <label for="id_date">Dzień tygodnia</label>
+                                                         {{ form.date }}
+                                                     </div>
+                                                 </div>
+
+                                                  <div class="col-12 col-sm-6 col-md-4">
+                                                     <div class="form-group">
+                                                          <label for="id_collageForm">Rodzaj studiów</label>
+                                                         {{ form.collageForm }}
+                                                     </div>
+                                                 </div>
+                                                  <div class="col-12 col-sm-6 col-md-4">
+                                                     <div class="form-group">
+                                                          <label for="id_degree">Stopień studiów</label>
+                                                         {{ form.degree }}
+                                                     </div>
+                                                 </div>
+
+                                                 <div class="col-12 col-sm-6 col-md-4">
+                                                     <div class="form-group">
+                                                          <label for="id_year">Semestr studiów</label>
+                                                         {{ form.year }}
+                                                     </div>
+                                                 </div>
+
+                                                 <div class="col-12 col-sm-12 col-md-8">
+                                                     <div class="form-group">
+                                                          <label for="id_speciality">Specjalność</label>
+                                                         {{ form.speciality }}
+                                                     </div>
+                                                 </div>
+                                                 </div>
+                                             <div class="schedule-form-submit-btn-container d-flex justify-content-center mb-5 ">
+                                             <button class="schedule-ajax-submit-btn btn btn-outline-success w-25" id="schedule-ajax-submit-btn" type="submit"><i class="fas fa-arrow-down"></i></button>
+                                            </div>
+                                         </form>
+                                            <div class="schedule-container table-responsive" id="schedule-container">
+                                            <table class="table table-striped schedule-table" id="schedule_table">
+                                                <tr class="schedule-table-header-row">
+                                                    <th scope="col" class="schedule-header-title">Nazwa Przedmiotu</th>
+                                                    <th scope="col" class="schedule-header-title">Prowadzący</th>
+                                                    <th scope="col" class="schedule-header-title">Data</th>
+<!--                                                    <th scope="col" class="schedule-header-title">Dzien</th>-->
+                                                    <th scope="col" class="schedule-header-title">Poczatek</th>
+                                                    <th scope="col" class="schedule-header-title">Koniec</th>
+                                                    <th scope="col" class="schedule-header-title">Sala</th>
+                                                    <th scope="col" class="schedule-header-title">Forma Zajęć</th>
+<!--                                                    <td class="schedule-header-title">Semestr</td>-->
+<!--                                                    <td class="schedule-header-title">Forma Studiów</td>-->
+<!--                                                    <td class="schedule-header-title">Stopien</td>-->
+                                                    <th scope="col" class="schedule-header-title"> Grupa</th>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        </div>
+                                    </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+</div>
+</div>
 </section>
+
+
  {% block javascript %}
   <script>
-        $.ajax({
-        url: 'json_request/',
-        type: 'GET',
-        dataType: 'json',
-        success: function (data, status, xhr) {
-            data_string = '';
-            for(var i = 0; i < data.length; i++){
-                data_string += "<tr>"
-                data_string +="<td>"+data[i].nazwaPrzedmiotu+"</td>"
-                data_string +="<td>"+data[i].prowadzacy+"</td>"
-                data_string +="<td>"+data[i].data+"</td>"
-                data_string +="<td>"+data[i].dzien+"</td>"
-                data_string +="<td>"+data[i].poczatek+"</td>"
-                data_string +="<td>"+data[i].koniec+"</td>"
-                data_string +="<td>"+data[i].sala+"</td>"
-                data_string +="<td>"+data[i].forma+"</td>"
-                data_string +="<td>"+data[i].semestr+"</td>"
-                data_string +="<td>"+data[i].formaStudiow+"</td>"
-                data_string +="<td>"+data[i].stopien+"</td>"
-                data_string +="<td>"+data[i].grupa+"</td>"
-                data_string += "</tr>"
+
+      // var scheduleForm = document.getElementById('main_schedule_form');
+      //
+      // scheduleForm.addEventListener('submit', (e) => {
+      //
+      //     e.preventDefault();
+
+          // var scheduleContainer = document.getElementById('schedule-container');
+          // scheduleContainer.classList.add('d-none');
+
+            $.ajax({
+            url: 'json_request/',
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+
+                    // scheduleContainer.classList.remove('d-none');
+
+                    var tbody = document.createElement('tbody');
+
+                    for(var i = 0; i < data.length; i++){
+                        var row = document.createElement('tr');
+                        row.classList.add('schedule-table-row');
+
+                        var column_name = document.createElement('td');
+                        column_name.classList.add('schedule-header-title');
+                        column_name.appendChild(document.createTextNode(data[i].nazwaPrzedmiotu));
+
+                        var column_teacher = document.createElement('td');
+                        column_teacher.classList.add('schedule-header-title');
+                        column_teacher.appendChild(document.createTextNode(data[i].prowadzacy));
+
+                        var column_date = document.createElement('td');
+                        column_date.classList.add('schedule-header-title');
+                        column_date.appendChild(document.createTextNode(data[i].data));
+
+                         var column_start = document.createElement('td');
+                        column_start.classList.add('schedule-header-title');
+                        column_start.appendChild(document.createTextNode(data[i].poczatek));
+
+                         var column_end = document.createElement('td');
+                        column_end.classList.add('schedule-header-title');
+                        column_end.appendChild(document.createTextNode(data[i].koniec));
+
+                          var column_place = document.createElement('td');
+                        column_place.classList.add('schedule-header-title');
+                        column_place.appendChild(document.createTextNode(data[i].sala));
+
+                         var column_form = document.createElement('td');
+                        column_form.classList.add('schedule-header-title');
+                        column_form.appendChild(document.createTextNode(data[i].forma));
+
+                        //  var column_part = document.createElement('td');
+                        // column_part.classList.add('schedule-header-title');
+                        // column_part.appendChild(document.createTextNode(data[i].semestr));
+
+                        //  var column_formstudy = document.createElement('td');
+                        // column_formstudy.classList.add('schedule-header-title');
+                        // column_formstudy.appendChild(document.createTextNode(data[i].formaStudiow));
+                        //
+                        // var column_studyYear = document.createElement('td');
+                        // column_studyYear.classList.add('schedule-header-title');
+                        // column_studyYear.appendChild(document.createTextNode(data[i].stopien));
+
+                        var column_group = document.createElement('td');
+                        column_group.classList.add('schedule-header-title');
+                        column_group.appendChild(document.createTextNode(data[i].grupa));
+
+                        row.appendChild(column_name);
+                        row.appendChild(column_teacher);
+                        row.appendChild(column_date);
+                        row.appendChild(column_start);
+                        row.appendChild(column_end);
+                        row.appendChild(column_place);
+                        row.appendChild(column_form);
+                        // row.appendChild(column_part);
+                        // row.appendChild(column_formstudy);
+                        // row.appendChild(column_studyYear);
+                        row.appendChild(column_group);
+
+                        tbody.appendChild(row);
+
+                    }
+
+                    var scheduleTable = document.getElementById('schedule_table');
+                        scheduleTable.appendChild(tbody);
             }
-            $("#load_schedule").append(data_string+"</tr></table>");
-        }
-        })
+
+
+        });
+
+
+      // });
   </script>
     {% endblock %}
   {% endblock %}

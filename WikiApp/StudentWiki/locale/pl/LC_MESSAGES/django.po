@@ -37,6 +37,7 @@ msgstr "Opis pliku"
 msgid "File"
 msgstr "Plik"
 
+
 #: .\WikiApp\settings.py:143
 msgid "English"
 msgstr "Angielski"
@@ -188,3 +189,124 @@ msgstr "Czwartek"
 #: .\translations\context_processor.py:64
 msgid "Friday"
 msgstr "Piątek"
+
+#: WikiApp/settings.py:141
+msgid "English"
+msgstr "Angielski"
+
+#: WikiApp/settings.py:142
+msgid "Polish"
+msgstr "Polski"
+
+#: resources/models.py:22 translations/context_processor.py:46
+msgid "Resource description"
+msgstr "Opis zasobu"
+
+#: resources/models.py:23 translations/context_processor.py:52
+msgid "Resource address"
+msgstr "Adres zasobu"
+
+#: translations/context_processor.py:6
+msgid "Logout"
+msgstr "Wyloguj"
+
+#: translations/context_processor.py:7
+msgid "Contact"
+msgstr "Kontakt"
+
+#: translations/context_processor.py:12
+msgid "Upload file"
+msgstr "Dodaj plik"
+
+#: translations/context_processor.py:13
+msgid "File list"
+msgstr "Lista plików"
+
+#: translations/context_processor.py:14
+msgid "Uploaded files"
+msgstr "Dodane pliki"
+
+#: translations/context_processor.py:15
+msgid "Upload new file"
+msgstr "Dodaj nowy plik"
+
+#: translations/context_processor.py:16
+msgid "File preview"
+msgstr "Podgląd"
+
+#: translations/context_processor.py:17
+msgid "File description"
+msgstr "Opis pliku"
+
+#: translations/context_processor.py:18
+msgid "Download"
+msgstr "Pobierz"
+
+#: translations/context_processor.py:19
+msgid "Upload"
+msgstr "Dodaj plik"
+
+#: translations/context_processor.py:20
+msgid "Files added by users"
+msgstr "Pliki dodane przez użytkowników"
+
+#: translations/context_processor.py:21
+msgid "Details"
+msgstr "Szczegóły"
+
+#: translations/context_processor.py:22
+msgid "Error"
+msgstr "Błąd"
+
+#: translations/context_processor.py:23
+msgid "No such files exist"
+msgstr "Brak plików"
+
+#: translations/context_processor.py:24
+msgid "Remove file"
+msgstr "Usuń plik"
+
+#: translations/context_processor.py:25
+msgid "Owner"
+msgstr "Właściciel"
+
+#: translations/context_processor.py:41
+msgid "Add resource"
+msgstr "Dodaj zasób"
+
+#: translations/context_processor.py:42
+msgid "Resource list"
+msgstr "Lista zasobów"
+
+#: translations/context_processor.py:43
+msgid "External resources"
+msgstr "Zasoby zewnętrzne"
+
+#: translations/context_processor.py:44
+msgid "Add new resource"
+msgstr "Dodaj nowy zasób"
+
+#: translations/context_processor.py:45
+msgid "Resource preview"
+msgstr "Podgląd zasobu"
+
+#: translations/context_processor.py:47
+msgid "Open external resource"
+msgstr "Przejdź do zasobu zewnętrznego"
+
+#: translations/context_processor.py:48
+msgid "External resources added by users"
+msgstr "Zasoby zewnętrzne dodane przez użytkowników"
+
+#: translations/context_processor.py:49
+msgid "No resources available"
+msgstr "Brak dostępnych zasobów"
+
+#: translations/context_processor.py:50
+msgid "New external resource"
+msgstr "Nowy zasób zewnętrzny"
+
+#: translations/context_processor.py:51
+msgid "Remove resource"
+msgstr "Usuń zasób"
+

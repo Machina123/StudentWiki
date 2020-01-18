@@ -1,0 +1,112 @@
+{% extends "index.html" %}
+
+{% block title %}{{ project_name }} | Wyszukiwanie {% endblock %}
+
+{% block main_css %}
+    {{ block.super }}
+{% endblock %}
+
+{% block sub_css %}
+    {{ block.super }}
+{% endblock %}
+
+{% block main_head_js %}
+
+{% endblock %}
+
+{% block sub_head_js %}
+{% endblock %}
+
+{% block navigation %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<section class="page-main-container bg-light">
+    <div class="page-content">
+  <div class="page-inner-content container h-100">
+      <div class="page-header">
+          <div class="page-block">
+              <div class="row h-100 align-items-center">
+                  <div class="col-md-12">
+                      <div class="page-header-title">
+                          <h5 class="m-b-10">Wynik wyszukiwania</h5>
+                      </div>
+                      <ul class="breadcrumb">
+                          {% block breadcrumbs %}
+                              {{ block.super }}
+                          {% endblock %}
+                      </ul>
+                  </div>
+                  <div class="main-body">
+                      <div class="page-wrapper">
+                          <div class="row">
+                              <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5 class="card-title">
+                                              Wyszukiwania dla hasła :  <span class="search-query">{{ object_list.query }}</span>
+                                            </h5>
+                                        </div>
+
+                                        <div class="card-body">
+                                          {% if object_list.dicLength %}
+                                          {% if object_list.q1 %}
+                                          <ul class="search-category-list">
+                                            <span class="search-category-title">Pliki</span>
+                                            {% for object in object_list.q1 %}
+                                            <li class="search-category-item">{{ object.title }}</li>
+                                            {% endfor %}
+                                          </ul>
+                                          <hr>
+                                          {% endif %}
+                                           {% if object_list.q2 %}
+                                          <ul class="search-category-list">
+                                            <span class="search-category-title">Zasoby</span>
+                                            {% for object in object_list.q2 %}
+                                            <li class="search-category-item">{{ object.title }}</li>
+                                            {% endfor %}
+                                          </ul>
+                                          <hr>
+                                          {% endif %}
+                                           {% if object_list.q3 %}
+                                          <ul class="search-category-list">
+                                            <span class="search-category-title">Kursy</span>
+                                            {% for object in object_list.q3 %}
+                                            <li class="search-category-item">{{ object.sub_name }}</li>
+                                            {% endfor %}
+                                          </ul>
+                                          <hr>
+                                          {% endif %}
+
+                                            {% else %}
+                                                <div class="alert alert-danger" role="alert"><strong>{{ error }} </strong>{{ no_resources }}</div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+</div>
+</div>
+</section>
+{% endblock %}
+
+{% block footer %}
+    {{ block.super }}
+{% endblock %}
+
+{% block main_foot_js %}
+    {{ block.super }}
+{% endblock %}
+
+{% block sub_foot_js %}
+{% endblock %}
+
+
+
+

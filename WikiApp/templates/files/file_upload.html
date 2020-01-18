@@ -57,7 +57,38 @@
                                         <div class="card-body">
                                              <form method="post" enctype="multipart/form-data">
                                                 {% csrf_token %}
-                                                {{ form.as_p }}
+                                                <div class="row">
+                                                         <div class="col-sm-12">
+                                                     <div class="form-group">
+                                                         <label for="id_file_subject">Kurs</label>
+                                                         {{ form.file_subject }}
+                                                     </div>
+                                                 </div>
+
+
+                                                 <div class="col-sm-12">
+                                                     <div class="form-group">
+                                                         <label for="id_title">Nazwa pliku</label>
+                                                         {{ form.title }}
+                                                     </div>
+                                                 </div>
+
+
+                                                    <div class="col-sm-12">
+                                                     <div class="custom-file">
+                                                         {{ form.file }}
+                                                         <label class="custom-file-label" for="id_file">Wybierz plik</label>
+                                                     </div>
+
+                                                 </div>
+
+                                                       <div class="col-sm-12">
+                                                     <div class="form-group">
+                                                         <label for="id_description" style="margin-top:.5rem;">Opis pliku</label>
+                                                         {{ form.description }}
+                                                     </div>
+                                                 </div>
+                                                </div>
                                                  <button type="submit" class="btn btn-success">{{ file_upload }}</button>
                                              </form>
                                         </div>
@@ -87,4 +118,23 @@
 {% endblock %}
 
 {% block sub_foot_js %}
+<script>
+    var title = document.getElementById('id_title');
+    title.classList.add('form-control');
+
+    var file = document.getElementById('id_file');
+    file.classList.add('custom-file-input');
+
+    var desc = document.getElementById('id_description');
+    desc.classList.add('form-control');
+
+
+    $(".custom-file-input").on("change", function() {
+      var fileName = $(this).val().split("\\").pop();
+      $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+
+
+
+</script>
 {% endblock %}

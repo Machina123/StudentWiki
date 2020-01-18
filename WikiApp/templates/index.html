@@ -8,6 +8,7 @@
 
 {% block sub_css %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
 {% endblock %}
 
 {% block main_head_js %}
@@ -62,6 +63,12 @@
       <div class="col-12 text-center masthead_text">
         <h1 class="font-weight-light">Masthead Content</h1>
         <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <form action="{% url 'search_results' %}" method="get">
+              <div class="search-bar-container">
+              <input class="search-bar" name="q" type="text" placeholder="Wpisz poszukiwane hasło...">
+              <i class="fas fa-search search-bar-icon"></i>
+              </div>
+          </form>
       </div>
     </div>
   </div>

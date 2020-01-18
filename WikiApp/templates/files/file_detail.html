@@ -53,19 +53,28 @@
                                             </h5>
                                         </div>
                                         <div class="card-body">
-                                               <p><strong>{{ owner }}</strong>: {{ object.file_owner.username }}</p>
-                                                <p><strong>{{ file_description }}</strong>: {{ object.description|default:"(not provided)" }}</p>
-                                                <p>
-                                                    <a href="{{ object.file.url }}" class="btn btn-success">
-                                                        <span class="glyphicon glyphicon-floppy-save"></span> {{ download }}
+                                            <div class="card text-center">
+                                              <div class="card-header">
+                                                {{ object.file_subject.sub_name}}
+                                              </div>
+                                              <div class="card-body">
+                                                <h5 class="card-title"> {{ object.title }} </h5>
+                                                <p class="card-text">{{ object.description|default:"(not provided)" }}</p>
+                                                     <a href="{{ object.file.url }}" class="btn btn-success">
+                                                        <i class="fas fa-cloud-download-alt"></i> {{ download }}
                                                     </a>
-                                                    {% if object.file_owner == request.user %}
+                                                  {% if object.file_owner == request.user %}
                                                         {% url "files:file_delete" object.file_id as delete_uri %}
                                                         <a href="delete" class="btn btn-danger">
                                                             <i class="fas fa-trash"></i> {{ file_remove }}
                                                         </a>
                                                     {% endif %}
-                                                </p>
+                                              </div>
+                                              <div class="card-footer text-muted">
+                                                {{ owner }} : {{ object.file_owner.username }}
+                                                  # moze zmienic wlasciciel na dodano przez: ? i dac date ? jak to mozliwe ?
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
                               </div>

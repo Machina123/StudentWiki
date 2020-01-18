@@ -56,9 +56,41 @@
                                             </h5>
                                         </div>
                                         <div class="card-body">
-                                             <form method="post">
+
+                                            <form method="post" enctype="multipart/form-data">
                                                 {% csrf_token %}
-                                                {{ form.as_p }}
+                                                <div class="row">
+                                                         <div class="col-sm-12">
+                                                     <div class="form-group">
+                                                         <label for="id_rsrc_subject">Kurs</label>
+                                                         {{ form.rsrc_subject }}
+                                                     </div>
+                                                 </div>
+
+
+                                                 <div class="col-sm-12">
+                                                     <div class="form-group">
+                                                         <label for="id_title">Nazwa pliku</label>
+                                                         {{ form.title }}
+                                                     </div>
+                                                 </div>
+
+
+                                                    <div class="col-sm-12">
+                                                     <div class="form-group">
+                                                         <label for="id_resource_uri">Adres zasobu</label>
+                                                         {{ form.resource_uri }}
+                                                     </div>
+
+                                                 </div>
+
+                                                       <div class="col-sm-12">
+                                                     <div class="form-group">
+                                                         <label for="id_description">Opis zasobu</label>
+                                                         {{ form.description }}
+                                                     </div>
+                                                 </div>
+                                                </div>
                                                  <button type="submit" class="btn btn-success">{{ add_res }}</button>
                                              </form>
                                         </div>
@@ -88,4 +120,14 @@
 {% endblock %}
 
 {% block sub_foot_js %}
+<script>
+     var title = document.getElementById('id_title');
+    title.classList.add('form-control');
+
+    var file = document.getElementById('id_resource_uri');
+    file.classList.add('form-control');
+
+    var desc = document.getElementById('id_description');
+    desc.classList.add('form-control');
+</script>
 {% endblock %}

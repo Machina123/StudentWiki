@@ -52,12 +52,22 @@
                                             </h5>
                                         </div>
                                         <div class="card-body">
-                                             {% if object_list %}
+                                            <div class="resource-list-container">
+                                                <table class="table table-hover resource-list-table">
+                                                    <tr class="resource-list-table-header-row">
+                                                        <th scope="col" class="resource-list-header-title">Nazwa zasobu</th>
+                                                        <th scope="col" class="resource-list-header-title">Opis</th>
+                                                        <th scope="col" class="resource-list-header-title">Szczegóły</th>
+                                                    </tr>
+                                                    <tbody>
+                                                     {% if object_list %}
                                                 {% regroup object_list|dictsort:"rsrc_subject.sub_name" by rsrc_subject.sub_name as res_list %}
                                                 {% for res_group in res_list %}
-                                                    <h5>{{ res_group.grouper }}</h5>
-                                                    <table class="table table-hover">
-                                                        <tbody>
+                                                        <tr class="resource-list-row-title">
+                                                            <td class="resource-list-row-title-item" colspan="3">
+                                                                <h5>{{ res_group.grouper }}</h5>
+                                                            </td>
+                                                        </tr>
                                                         {% for resource_obj in res_group.list %}
                                                             <tr>
                                                                 {% url "resources:resource_detail" resource_obj.resource_id as resource_uri %}
@@ -66,19 +76,19 @@
                                                                     {{ resource_obj.description|truncatechars:50|default:"(no description provided)" }}</td>
                                                                 <td class="text-right">
                                                                     <a href="{{ resource_uri }}" class="btn btn-primary" role="button">
-                                                                         {{ details }}
+                                                                        {{ details }}
                                                                     </a>
                                                                 </td>
 
                                                             </tr>
                                                         {% endfor %}
-                                                        </tbody>
-                                                    </table>
-                                                {% endfor %}
-
-                                            {% else %}
-                                                <div class="alert alert-danger" role="alert"><strong>{{ error }} </strong>{{ no_resources }}</div>
-                                            {% endif %}
+                                                      {% endfor %}
+                                                    {% else %}
+                                                          <div class="alert alert-danger" role="alert"><strong>{{ error }} </strong>{{ no_resources }}</div>
+                                                    {% endif %}
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                               </div>

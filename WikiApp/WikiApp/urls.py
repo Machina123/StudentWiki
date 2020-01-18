@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('django.contrib.auth.urls')),
     url(r'^i18n/', include('django.conf.urls.i18n')),
+    path('search/', views.SearchResultsView.as_view(), name='search_results'),
 ]
 
 
@@ -32,5 +33,7 @@ urlpatterns += i18n_patterns(
     path('files/', include('Files.urls')),
     path('schedule/', include('schedule.urls')),
     path('resources/', include('resources.urls', namespace="resources")),
-    path('consultations/', include('consultations.urls'))
+    path('consultations/', include('consultations.urls')),
+    path('search/', views.SearchResultsView.as_view(), name='search_results')
+
 )

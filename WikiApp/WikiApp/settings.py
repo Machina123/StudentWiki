@@ -12,9 +12,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
-# linijki na Macbooki
-
-import pymysql
+# import pymysql
+#
+# pymysql.install_as_MySQLdb()
 
 
 # koniec linijki
@@ -47,7 +47,9 @@ INSTALLED_APPS = [
     'UsersActions.apps.RegistrationConfig',
     'Files.apps.FilesConfig',
     'resources.apps.ResourcesConfig',
-    'consultations.apps.ConsultationsConfig'
+    'consultations.apps.ConsultationsConfig',
+    'schedule.apps.ScheduleConfig'
+
 ]
 
 MIDDLEWARE = [

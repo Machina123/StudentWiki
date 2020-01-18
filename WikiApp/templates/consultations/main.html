@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %}StudentWiki | Harmonogram {% endblock %}
+{% block title %}StudentWiki | Konsultacje {% endblock %}
 
 {% block main_css %}
 {{ block.super }}
@@ -25,32 +25,77 @@
 
 {% block content %}
 
-<section id="load_schedule">
-    <table class="table table-hover">
-        <thead>
-        <tr>
-            <th>{{lecturer}}</th>
-            <th>{{room}}</th>
-            <th>{{hours}}</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for w in data %}
-        <tr>
 
-            <td>{{w.wykladowca}}</td>
-            <td>{{w.pokoj}}</td>
-            <td>
-                {% if w.godziny.Poniedzialek != " " %} {{monday}} {{w.godziny.Poniedzialek}} <br> {% endif %}
-                {% if w.godziny.Wtorek != " " %} {{tuesday}} {{w.godziny.Wtorek}} <br> {% endif %}
-                {% if w.godziny.Sroda != " " %} {{wednesday}} {{w.godziny.Sroda}} <br> {% endif %}
-                {% if w.godziny.Czwartek != " " %} {{thursday}} {{w.godziny.Czwartek}} <br> {% endif %}
-                {% if w.godziny.Piatek != " " %} {{friday}} {{w.godziny.Piatek}} {% endif %}
-            </td>
-        </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+
+<section class="page-main-container bg-light">
+    <div class="page-content">
+  <div class="page-inner-content container h-100">
+      <div class="page-header">
+          <div class="page-block">
+              <div class="row h-100 align-items-center">
+                  <div class="col-md-12">
+                      <div class="page-header-title">
+                          <h5 class="m-b-10">{{ res_creation }}</h5>
+                      </div>
+                      <ul class="breadcrumb">
+                          {% block breadcrumbs %}
+                              {{ block.super }}
+                              <li class="breadcrumb-item">
+                                  <a href="{% url 'resources:resource_list' %}"> {{ resources }} </a>
+                              </li>
+                          {% endblock %}
+                          <li class="breadcrumb-item">{{ new_res }}</li>
+                      </ul>
+                  </div>
+                  <div class="main-body">
+                      <div class="page-wrapper">
+                          <div class="row">
+                              <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5 class="card-title">
+                                                {{ new_res }}
+                                            </h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <section id="load_schedule">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                <tr>
+                                                    <th>{{lecturer}}</th>
+                                                    <th>{{room}}</th>
+                                                    <th>{{hours}}</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for w in data %}
+                                                <tr>
+
+                                                    <td>{{w.wykladowca}}</td>
+                                                    <td>{{w.pokoj}}</td>
+                                                    <td>
+                                                        {% if w.godziny.Poniedzialek != " " %} {{monday}} {{w.godziny.Poniedzialek}} <br> {% endif %}
+                                                        {% if w.godziny.Wtorek != " " %} {{tuesday}} {{w.godziny.Wtorek}} <br> {% endif %}
+                                                        {% if w.godziny.Sroda != " " %} {{wednesday}} {{w.godziny.Sroda}} <br> {% endif %}
+                                                        {% if w.godziny.Czwartek != " " %} {{thursday}} {{w.godziny.Czwartek}} <br> {% endif %}
+                                                        {% if w.godziny.Piatek != " " %} {{friday}} {{w.godziny.Piatek}} {% endif %}
+                                                    </td>
+                                                </tr>
+                                                {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </section>
+                                        </div>
+                                    </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+</div>
+</div>
 </section>
 {% endblock %}
 

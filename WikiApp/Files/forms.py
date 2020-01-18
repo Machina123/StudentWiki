@@ -8,6 +8,7 @@ from django.utils.translation import ugettext_lazy as _
 
 class FileUploadForm(forms.ModelForm):
     file_subject = forms.ModelChoiceField(queryset=Subject.objects.all(), empty_label="--------", label=_("Subject"))
+    file_subject.widget.attrs.update({'class': 'form-control'})
 
     class Meta:
         model = FileModel

@@ -52,32 +52,44 @@
                                             </h5>
                                         </div>
                                         <div class="card-body">
-                                             {% if object_list %}
-                                            {% regroup object_list|dictsort:"file_subject.sub_name" by file_subject.sub_name as file_list %}
-                                            {% for file_group in file_list %}
-                                                <h5>{{ file_group.grouper }}</h5>
-                                                <table class="table table-hover">
+                                            <div class="file-list-container">
+                                                <table class="table table-hover file-list-table">
+                                                    <tr class="file-list-table-header-row">
+                                                        <th scope="col" class="file-list-header-title">Nazwa pliku</th>
+                                                        <th scope="col" class="file-list-header-title">Opis</th>
+                                                        <th scope="col" class="file-list-header-title">Szczegóły</th>
+                                                    </tr>
                                                     <tbody>
-                                                    {% for file_obj in file_group.list %}
-                                                        <tr>
-                                                            {% url "files:file_detail" file_obj.file_id as file_uri %}
-                                                            <td>{{ file_obj.title }}</td>
-                                                            <td>
-                                                                {{ file_obj.description|truncatechars:50|default:"(no description provided)" }}</td>
-                                                            <td class="text-right">
-                                                                <a href="{{ file_uri }}" class="btn btn-primary" role="button">
-                                                                    {{ details }}
-                                                                </a>
+                                                    {% if object_list %}
+                                                    {% regroup object_list|dictsort:"file_subject.sub_name" by file_subject.sub_name as file_list %}
+                                                    {% for file_group in file_list %}
+                                                        <tr class="file-list-row-title">
+                                                            <td class="file-list-row-title-item" colspan="3">
+                                                                <h5>{{ file_group.grouper }}</h5>
                                                             </td>
-
                                                         </tr>
-                                                    {% endfor %}
+                                                        {% for file_obj in file_group.list %}
+                                                            <tr>
+                                                                {% url "files:file_detail" file_obj.file_id as file_uri %}
+                                                                <td>{{ file_obj.title }}</td>
+                                                                <td>
+                                                                    {{ file_obj.description|truncatechars:50|default:"(no description provided)" }}</td>
+                                                                <td class="text-right">
+                                                                    <a href="{{ file_uri }}" class="btn btn-primary" role="button">
+                                                                        {{ details }}
+                                                                    </a>
+                                                                </td>
+
+                                                            </tr>
+                                                        {% endfor %}
+                                                      {% endfor %}
+                                                    {% else %}
+                                                        <div class="alert alert-danger" role="alert"><strong>{{ error }} </strong>{{ no_files }}</div>
+                                                    {% endif %}
                                                     </tbody>
                                                 </table>
-                                            {% endfor %}
-                                        {% else %}
-                                            <div class="alert alert-danger" role="alert"><strong>{{ error }} </strong>{{ no_files }}</div>
-                                        {% endif %}
+                                            </div>
+
                                         </div>
                                     </div>
                               </div>
