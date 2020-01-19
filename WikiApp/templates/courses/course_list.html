@@ -1,0 +1,98 @@
+{% extends "index.html" %}
+
+{% block title %}{{ project_name }} | {{ lbl_course_list }} {% endblock %}
+
+{% block main_css %}
+    {{ block.super }}
+{% endblock %}
+
+{% block sub_css %}
+    {{ block.super }}
+{% endblock %}
+
+{% block main_head_js %}
+
+{% endblock %}
+
+{% block sub_head_js %}
+{% endblock %}
+
+{% block navigation %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <section class="page-main-container bg-light">
+    <div class="page-content">
+        <div class="page-inner-content container h-100">
+            <div class="page-header">
+                <div class="page-block">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-md-12">
+                            <div class="page-header-title">
+                                <h5 class="m-b-10">{{ lbl_course_list }}</h5>
+                            </div>
+                            <ul class="breadcrumb">
+                                {% block breadcrumbs %}
+                                    {{ block.super }}
+                                    <li class="breadcrumb-item">
+                                        <span> {{ lbl_course_list }} </span>
+                                    </li>
+                                {% endblock %}
+                            </ul>
+                        </div>
+                        <div class="main-body">
+                            <div class="page-wrapper">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5 class="card-title">
+                                                    {{ available_courses }}
+                                                </h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="file-list-container">
+                                                    {% if courses %}
+                                                        {% regroup courses|dictsort:"sub_name" by sub_name|first as course_list %}
+                                                        {% for course_group in course_list %}
+                                                            <p>
+                                                            <h5>{{ course_group.grouper }}</h5>
+                                                            {% for course in course_group.list %}
+                                                                <a href="{% url "courses:course_detail" course.id %}">{{ course.sub_name }}</a>
+                                                                <br>
+                                                            {% endfor %}
+                                                            </p>
+                                                        {% endfor %}
+                                                    {% else %}
+                                                        <div class="alert alert-danger" role="alert">
+                                                            <strong>{{ error }} </strong>{{ err_no_courses }}</div>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ block.super }}
+{% endblock %}
+
+
+
+{% block main_foot_js %}
+    {{ block.super }}
+{% endblock %}
+
+{% block sub_foot_js %}
+{% endblock %}

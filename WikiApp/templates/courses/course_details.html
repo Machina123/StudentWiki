@@ -1,0 +1,153 @@
+{% extends "index.html" %}
+
+{% block title %}{{ project_name }} | {{ lbl_course_detail }} {% endblock %}
+
+{% block main_css %}
+    {{ block.super }}
+{% endblock %}
+
+{% block sub_css %}
+    {{ block.super }}
+{% endblock %}
+
+{% block main_head_js %}
+
+{% endblock %}
+
+{% block sub_head_js %}
+{% endblock %}
+
+{% block navigation %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <section class="page-main-container bg-light">
+    <div class="page-content">
+        <div class="page-inner-content container h-100">
+            <div class="page-header">
+                <div class="page-block">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-md-12">
+                            <div class="page-header-title">
+                                <h5 class="m-b-10">{{ lbl_course_detail }}</h5>
+                            </div>
+                            <ul class="breadcrumb">
+                                {% block breadcrumbs %}
+                                    {{ block.super }}
+                                    <li class="breadcrumb-item">
+                                        <a href="{% url 'courses:courses_list' %}">{{ lbl_course_list }}</a>
+                                    </li>
+                                    <li class="breadcrumb-item">
+                                        <span>{{ course.sub_name }}</span>
+                                    </li>
+                                {% endblock %}
+                            </ul>
+                        </div>
+                        <div class="main-body">
+                            <div class="page-wrapper">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5 class="card-title">
+                                                    {{ course.sub_name }}
+                                                </h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="file-list-container">
+                                                    <p>
+                                                    <h5>{{ associated_files }}</h5>
+                                                    {% if files %}
+                                                        <table class="table table-hover">
+                                                            <thead>
+                                                            <tr class="file-list-table-header-row">
+                                                                <th scope="col"
+                                                                    class="file-list-header-title">{{ file_name }}</th>
+                                                                <th scope="col"
+                                                                    class="file-list-header-title">{{ description }}</th>
+                                                                <th scope="col"
+                                                                    class="file-list-header-title">{{ details }}</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            {% for file_obj in files %}
+                                                                <tr>
+                                                                    {% url "files:file_detail" file_obj.file_id as file_uri %}
+                                                                    <td>{{ file_obj.title }}</td>
+                                                                    <td>
+                                                                        {{ file_obj.description|truncatechars:50|default:"(no description provided)" }}</td>
+                                                                    <td class="text-right">
+                                                                        <a href="{{ file_uri }}" class="btn btn-primary"
+                                                                           role="button">
+                                                                            {{ details }}
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            {% endfor %}
+                                                            </tbody>
+                                                        </table>
+                                                    {% else %}
+                                                        <div class="alert alert-secondary">{{ no_files }}</div>
+                                                    {% endif %}
+                                                    </p>
+                                                    <p>
+                                                    <h5>{{ associated_resources }}</h5>
+                                                    {% if resources %}
+                                                        <table class="table table-hover">
+                                                            <thead>
+                                                            <tr class="resource-list-table-header-row">
+                                                                <th scope="col" class="resource-list-header-title">{{ res_name }}</th>
+                                                                <th scope="col" class="resource-list-header-title">{{ description }}</th>
+                                                                <th scope="col" class="resource-list-header-title">{{ details }}</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            {% for resource_obj in resources %}
+                                                                <tr>
+                                                                    {% url "resources:resource_detail" resource_obj.resource_id as resource_uri %}
+                                                                    <td>{{ resource_obj.title }}</td>
+                                                                    <td>
+                                                                        {{ resource_obj.description|truncatechars:50|default:"(no description provided)" }}</td>
+                                                                    <td class="text-right">
+                                                                        <a href="{{ resource_uri }}"
+                                                                           class="btn btn-primary" role="button">
+                                                                            {{ details }}
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            {% endfor %}
+                                                            </tbody>
+                                                        </table>
+                                                    {% else %}
+                                                        <div class="alert alert-secondary">{{ no_resources }}</div>
+                                                    {% endif %}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ block.super }}
+{% endblock %}
+
+
+
+{% block main_foot_js %}
+    {{ block.super }}
+{% endblock %}
+
+{% block sub_foot_js %}
+{% endblock %}

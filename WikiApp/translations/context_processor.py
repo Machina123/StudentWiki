@@ -88,3 +88,13 @@ def consultations(request):
         'group': _('Group'),
     }
 
+def courses(request):
+    return {
+        'lbl_courses': _('Courses'),
+        'lbl_course_list': _('Course list'),
+        'lbl_course_detail': _('Course detail'),
+        'available_courses': _('Available courses'),
+        'associated_files': _('Files associated with course'),
+        'associated_resources': _('External resources associated with course'),
+        'err_no_courses': _('No courses available')
+    }

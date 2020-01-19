@@ -55,7 +55,9 @@
                                           <ul class="search-category-list">
                                             <span class="search-category-title">Pliki</span>
                                             {% for object in object_list.q1 %}
-                                            <li class="search-category-item">{{ object.title }}</li>
+                                            <li class="search-category-item">
+                                                <a href="{% url 'files:file_detail' object.file_id %}">{{ object.title }} ({{ object.file_subject.sub_name }})</a>
+                                            </li>
                                             {% endfor %}
                                           </ul>
                                           <hr>
@@ -64,7 +66,9 @@
                                           <ul class="search-category-list">
                                             <span class="search-category-title">{{ resources }}</span>
                                             {% for object in object_list.q2 %}
-                                            <li class="search-category-item">{{ object.title }}</li>
+                                            <li class="search-category-item">
+                                                <a href="{% url 'resources:resource_detail' object.resource_id %}">{{ object.title }} ({{ object.rsrc_subject.sub_name }})</a>
+                                            </li>
                                             {% endfor %}
                                           </ul>
                                           <hr>
@@ -73,7 +77,9 @@
                                           <ul class="search-category-list">
                                             <span class="search-category-title">{{ courses }}</span>
                                             {% for object in object_list.q3 %}
-                                            <li class="search-category-item">{{ object.sub_name }}</li>
+                                            <li class="search-category-item">
+                                                <a href="{% url 'courses:course_detail' object.id %}">{{ object.sub_name }}</a>
+                                            </li>
                                             {% endfor %}
                                           </ul>
                                           <hr>
