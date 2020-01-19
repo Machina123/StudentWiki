@@ -2,7 +2,7 @@ from django.utils.translation import ugettext_lazy as _
 
 def index(request):
     return {
-        'project_name': 'StudentWiki',
+        'project_name': 'InfoStudent',
         'logout': _('Logout'),
         'contact': _('Contact'),
         'search': _("Searching"),
