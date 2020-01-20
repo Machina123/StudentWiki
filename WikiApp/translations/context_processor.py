@@ -42,7 +42,8 @@ def footer(request):
         'address': 'ul. Podchorążych 2, 30-084 Kraków',
         'phone': '''telefon: (+48 12) 662 78 45\n
              (+48 12) 662 78 46\n
-             fax: (+48 12) 662 78 46\n''',
+             ''',
+        'fax': 'fax: (+48 12) 662 78 46',
         'email': 'email: ii@up.krakow.pl',
     }
 

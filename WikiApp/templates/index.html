@@ -27,15 +27,16 @@
         </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'files:file_upload' %}">{{ upload }}</a>
-        </li>
+
         <li class="nav-item">
           <a class="nav-link" href="{% url 'files:file_list' %}">{{ file_list }}</a>
         </li>
           <li class="nav-item"><a href="{% url 'resources:resource_list' %}" class="nav-link">{{ res_list }}</a></li>
         <li class="nav-item">
-          <a class="nav-link" href="#">{{ contact }}</a>
+          <a class="nav-link" href="{% url 'schedule:schedule' %}">{{ schedule }}</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link" href="{% url 'consultations:consultations' %}">{{ consultations }}</a>
         </li>
         <li class="nav-item active">
             <a class="nav-link" href="{% url 'user:my_logout' %}">{{ logout }}
@@ -44,9 +45,9 @@
         </li>
  <li class="nav-item">
 {% ifequal LANGUAGE_CODE "en" %}
-    <a class="nav-link" href="/pl{{ request.get_full_path |slice:'3:' }}">Polski</a>
+    <a class="nav-link" href="/pl{{ request.get_full_path |slice:'3:' }}"><img class="language-flag" src="{% static 'pl.png' %}" alt="Język polski" />&nbsp;PL</a>
 {% else %}
-    <a class="nav-link" href="/en{{ request.get_full_path |slice:'3:' }}">English</a>
+    <a class="nav-link" href="/en{{ request.get_full_path |slice:'3:' }}"><img class="language-flag" src="{% static 'uk.png' %}" alt="Język angielski"/>&nbsp;UK</a>
 {% endifequal %}
       </li>
       </ul>
@@ -68,7 +69,7 @@
   <div class="container h-100">
     <div class="row h-100 align-items-center">
       <div class="col-12 text-center masthead_text">
-        <h1 class="font-weight-light">Masthead Content</h1>
+        <h1 class="font-weight-light">{{ project_name }}</h1>
         <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           <form action="{% url 'search_results' %}" method="get">
               <div class="search-bar-container">
@@ -97,16 +98,16 @@
          <img class="page-footer-logo" src="{% static '3_logo_up.png' %}" alt="">
        </div>
        <div class="col-4">
-         <h4>{{ university_name }} <br>
-             {{ institute_name }} <br>
-             {{ address }}
-         </h4>
-         <p> {{ phone }}
-             {{ email }} <br>
-         </p>
+         <h5 class="footer-main-org-title">{{ university_name }}</h5>
+             <span class="footer-org-inst-title">{{ institute_name }}</span> <br>
+             <span class="footer-org-addr-data">{{ address }}</span><br>
+
+           <span class="footer-org-phone"> {{ phone }} </span><br>
+           <span class="footer-org-fax">{{ fax }}</span> <br>
+             <span class="footer-org-email">{{ email }} </span>
        </div>
        <div class="col-4">
-         <h4>2020</h4>
+         <span>2020</span>
        </div>
      </div>
     </div>

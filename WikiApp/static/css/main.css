@@ -207,3 +207,8 @@ body {
 .custom-file-input:lang(pl)~.custom-file-label::after {
     content: "Wybierz";
 }
+
+.language-flag{
+    width:16px;
+}
+
